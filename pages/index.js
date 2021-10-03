@@ -1,25 +1,40 @@
-import Widget from "../src/components/Widget";
+import Header from "../src/components/Header";
+import Main from "../src/components/Main";
 import Background from "../src/components/Background";
-import db from "../db.json";
 
 export default function Home() {
   return (
     <Background>
-      <Widget>
-        <Widget.Stats>
-          <Widget.Stats.Picture />
-          <Widget.Stats.Info>
+      <Header>
+        <Header.Stats>
+          <Header.StatsPicture />
+          <Header.StatsInfo>
             <p>William Mota</p>
             <p>Level 24</p>
             <p>xp 220</p>
-          </Widget.Stats.Info>
-        </Widget.Stats>
-        <Widget.Infos>
-          <Widget.Bars />
-          <Widget.Bars />
-        </Widget.Infos>
-        <Widget.ExperienceBar />
-      </Widget>
+          </Header.StatsInfo>
+        </Header.Stats>
+        <Header.Infos>
+          <Header.InfoBar>
+            <p>Title:</p>
+            <p>The Lord of Logic</p>
+          </Header.InfoBar>
+          <Header.InfoBar>
+            <p>Class:</p>
+            <p>Human</p>
+          </Header.InfoBar>
+        </Header.Infos>
+        <Header.ExperienceBar />
+      </Header>
+      <Main>
+        <Main.PlayerArea>
+          <Main.MiniCard />
+          <Main.MiniCard />
+          <Main.MiniCard />
+          <Main.MiniCard />
+        </Main.PlayerArea>
+        <Main.Ranking />
+      </Main>
     </Background>
   );
 }
