@@ -3,94 +3,28 @@
   "description": "Teste os seus conhecimentos sobre Harry Potter e vamos ver quantos feitiços você vai conseguir conjurar",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/NoBXm9gmqzx96/giphy.gif",
-      "title": "Qual é o nome da loja de piadas de Fred e Jorge?",
-      "description": "Se for irmão é 20 galeões",
-      "answer": 1,
+      "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
+      "title": "Quais o menor e o maior país do mundo??",
+      "description": "Essa é para aquecer...",
+      "answer": 0,
       "alternatives": [
-        "Empório de Piadas Weasley",
-        "Gemialidades Weasley",
-        "Empório do Fred e George",
-        "Loja de piadas de Zonko"
+        "Vaticano e Rússia",
+        "Nauru e China",
+        "Mônaco e Canadá",
+        "Malta e Estados Unidos"
       ]
     },
     {
-      "image": "https://media.giphy.com/media/BlmtmL4aP1WYE/giphy.gif",
-      "title": "Quem vigia a entrada da sala comunal da Grifinória?",
-      "description": "Disse Gryffindor:' Nós vamos ensinar a todos aqueles com os bravos feitos do seu nome.",
-      "answer": 3,
+      "image": "https://cdn.dribbble.com/users/1129235/screenshots/3123420/media/6802b1a795f43fb038aa3c7f60c88ee8.gif",
+      "title": "De acordo com a teoria da evolução humana os primeiros hominídeos pertenciam ao grupo dos:",
+      "description": "'O ser humano só evolui a partir da necessidade.' -Vivaldo Neto",
+      "answer": 4,
       "alternatives": [
-        "A Dama Cinzenta",
-        "O Frade Gordo",
-        "O Barão Sangrento",
-        "A Mulher Gorda"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/hujejOtss7zG0/giphy.gif",
-      "title": "De qual plataforma King's Cross sai o Expresso de Hogwarts?",
-      "description": "Me desculpe senhor(a), você pode me dizer aonde eu posso encontrar a plataforma...??",
-      "answer": 1,
-      "alternatives": [
-        "Oito e um quarto",
-        "Nove e três quartos",
-        "Cinco anos e meio",
-        "Onze"
-      ]
-    },
-    {
-      "image": "https://ahaslides.com/wp-content/uploads/2020/05/original.gif",
-      "title": "Qual é o modelo da primeira vassoura que Harry já recebeu?",
-      "description": "Não é uma vassoura velha qualquer, é uma...",
-      "answer": 3,
-      "alternatives": ["Cleansweep One", "Aspirador", "Firebolt", "Nimbus 2000"]
-    },
-    {
-      "image": "https://media.giphy.com/media/PcfozPlZSzARO/giphy.gif",
-      "title": "O que o feitiço “Obliviate” faz?",
-      "description": "...",
-      "answer": 2,
-      "alternatives": [
-        "Destrói objetos",
-        "Envia alguém para o reino inferior",
-        "Remove partes da memória de alguém",
-        "Torna os objetos invisíveis"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/X9JE4J2qYDDO0/giphy.gif",
-      "title": "Qual dessas NÃO é uma das Maldições Imperdoáveis?",
-      "description": "Se usar uma delas vai ganhar uma passagem só ida para Azkaban!",
-      "answer": 2,
-      "alternatives": [
-        "Maldição Cruciatus",
-        "Maldição Imperius",
-        "Sectumsempra",
-        "Avada kedavra"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/IIJpyNVX37NAI/giphy.gif",
-      "title": "Como Harry consegue respirar debaixo d'água durante a segunda tarefa do Torneio Tribruxo?",
-      "description": "Nevil: 'Eu Matei Harry Potter'",
-      "answer": 2,
-      "alternatives": [
-        "Ele transfigura em um tubarão",
-        "Ele beija uma sereia",
-        "Ele come guelricho",
-        "Ele executa um charme de cabeça de bolha"
-      ]
-    },
-    {
-      "image": "https://media.giphy.com/media/720g7C1jz13wI/giphy.gif",
-      "title": "Qual é o nome completo de Alvo Dumbledore?",
-      "description": "E eu achava que meu nome era grande",
-      "answer": 1,
-      "alternatives": [
-        "Alvo Wulfrico Percival Brian Dumbledore",
-        "Alvo Percival Wulfrico Brian Dumbledore",
-        "Alvo Brian Percival Wulfrico Dumbledore",
-        "Alvo Brian Percival Wulfrico Dumbledor"
+        "Homo habilis",
+        "Homo erectus",
+        "Homo ergaster",
+        "Homo sapiens",
+        "Australopithecus"
       ]
     }
   ],
@@ -112,7 +46,11 @@
       "secondary": "#192a46",
       "contrastText": "#FFFFFF",
       "wrong": "#FF5722",
-      "success": "#4CAF50"
+      "success": "#4CAF50",
+      "red": "#F93B7A",
+      "green": "#37D1AC",
+      "blue": "#5766DA",
+      "yellow": "#FBC94B"
     },
     "borderRadius": "4px"
   }

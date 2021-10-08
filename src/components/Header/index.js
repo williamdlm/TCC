@@ -37,6 +37,16 @@ Header.StatsInfo = styled.div`
     display: block;
     margin-bottom: 0.3rem;
   }
+  p:first-child {
+    font-weight: bolder;
+  }
+  p:nth-child(2) {
+    color: ${({ theme }) => theme.colors.green};
+  }
+  p:nth-child(3) {
+    text-transform: uppercase;
+    color: ${({ theme }) => theme.colors.red};
+  }
 `;
 
 Header.Infos = styled.div`
@@ -61,7 +71,7 @@ Header.InfoBar = styled.div`
 
 Header.ExperienceBar = styled.div`
   position: relative;
-  margin-top: 1rem;
+  margin-top: 2rem;
   width: 100%;
   height: 1rem;
   border-radius: 50px;
@@ -70,10 +80,11 @@ Header.ExperienceBar = styled.div`
   &::before {
     position: absolute;
     display: block;
-    left: calc(100% - 5.3125rem);
-    top: -1.2rem;
+    left: calc(100% - 6rem);
+    top: -1.5rem;
     width: 10rem;
     content: "Experience";
+    font-style: italic;
   }
 `;
 
