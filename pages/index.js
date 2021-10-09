@@ -2,6 +2,7 @@ import Header from "../src/components/Header";
 import Main from "../src/components/Main";
 import Background from "../src/components/Background";
 import Head from "next/head";
+import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 
 export default function Home() {
@@ -12,7 +13,16 @@ export default function Home() {
         <title>TCC</title>
       </Head>
       <Header>
-        <Header.Stats>
+        <Header.Stats
+          as={motion.section}
+          transition={{ delay: 0, duration: 1 }}
+          variants={{
+            show: { opacity: 1, x: "0" },
+            hidden: { opacity: 0, x: "100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Header.StatsPicture />
           <Header.StatsInfo>
             <p>William Mota</p>
@@ -20,8 +30,26 @@ export default function Home() {
             <p>xp 220</p>
           </Header.StatsInfo>
         </Header.Stats>
-        <Header.Infos>
-          <Header.InfoBar>
+        <Header.Infos
+          as={motion.section}
+          transition={{ delay: 0, duration: 1 }}
+          variants={{
+            show: { opacity: 1, y: "0" },
+            hidden: { opacity: 0, y: "100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        >
+          <Header.InfoBar
+            as={motion.section}
+            transition={{ delay: 0.5, duration: 0.5 }}
+            variants={{
+              show: { opacity: 1, y: "0" },
+              hidden: { opacity: 0, y: "100%" },
+            }}
+            initial="hidden"
+            animate="show"
+          >
             <p>Title:</p>
             <p>The Lord of Logic</p>
           </Header.InfoBar>
@@ -30,10 +58,28 @@ export default function Home() {
             <p>Human</p>
           </Header.InfoBar>
         </Header.Infos>
-        <Header.ExperienceBar />
+        <Header.ExperienceBar
+          as={motion.section}
+          transition={{ delay: 1, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: "0" },
+            hidden: { opacity: 0, y: "100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </Header>
       <Main>
-        <Main.PlayerArea>
+        <Main.PlayerArea
+          as={motion.section}
+          transition={{ delay: 1, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, x: "0" },
+            hidden: { opacity: 0, x: "-100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        >
           <Main.MiniCard>
             <img
               className="icon classic"
@@ -65,7 +111,16 @@ export default function Home() {
             />
           </Main.MiniCard>
         </Main.PlayerArea>
-        <Main.Ranking />
+        <Main.Ranking
+          as={motion.section}
+          transition={{ delay: 1.5, duration: 1 }}
+          variants={{
+            show: { opacity: 1 },
+            hidden: { opacity: 0 },
+          }}
+          initial="hidden"
+          animate="show"
+        />
       </Main>
     </Background>
   );

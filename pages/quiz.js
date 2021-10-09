@@ -6,6 +6,9 @@ import Widget from "../src/components/Widget";
 import db from "../db.json";
 import QuizContainer from "../src/components/QuizContainer";
 import Button from "../src/components/Button";
+import AlternativesForm from "../src/components/AlternativeForms";
+import BackLinkArrow from "../src/components/BackLinkArrow";
+
 function ResultWidget({ results }) {
   return (
     <Widget>
@@ -14,7 +17,7 @@ function ResultWidget({ results }) {
         <p>{`Você acertou ${results.filter((x) => x).length} questões`}</p>
         <ul>
           {results.map((result, index) => (
-            <li>
+            <li key={`result__${index}`}>
               #{index + 1} Resultado: {result === true ? "Acertou" : "Errou"}
             </li>
           ))}
@@ -50,8 +53,9 @@ function QuestionWidget({
     <>
       <Widget>
         <Widget.Header>
-          {/* <BackLinkArrow href="/" />  */}
+          <BackLinkArrow href="/" />
           <h3>
+            {/* <BackLinkArrow href="/" /> */}
             Pergunta {`${questionIndex + 1}`} de {`${totalQuestions}`}
           </h3>
         </Widget.Header>
@@ -70,7 +74,7 @@ function QuestionWidget({
           <h2>{question.title}</h2>
           <p>{question.description}</p>
 
-          <form
+          <AlternativesForm
             onSubmit={(event) => {
               event.preventDefault();
               setIsQuestionSubmited(true);
@@ -84,11 +88,15 @@ function QuestionWidget({
           >
             {question.alternatives.map((alternative, alternativeIndex) => {
               const alternativeId = `alternative__${alternativeIndex}`;
+              const alternativeStatus = isCorrect ? "SUCCESS" : "ERROR";
+              const isSelect = selectedAlternative === alternativeIndex;
               return (
                 <Widget.Topic
                   as="label"
                   htmlFor={alternativeId}
                   key={alternativeId}
+                  data-selected={isSelect}
+                  data-status={isQuestionSubmited && alternativeStatus}
                 >
                   <input
                     style={{
@@ -100,6 +108,7 @@ function QuestionWidget({
                     onChange={() => setSelectedAlternative(alternativeIndex)}
                   />
                   {alternative}
+                  {console.log(isSelect)}
                 </Widget.Topic>
               );
             })}
@@ -109,7 +118,7 @@ function QuestionWidget({
             </Button>
             {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
             {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
-          </form>
+          </AlternativesForm>
           {/* <pre>{JSON.stringify(question, null, 4)}</pre> */}
         </Widget.Content>
       </Widget>
