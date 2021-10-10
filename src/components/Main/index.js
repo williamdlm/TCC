@@ -8,6 +8,15 @@ const Main = styled.div`
   width: 80%;
   height: 25rem;
   //background-color: ${({ theme }) => theme.colors.primary};
+
+  @media screen and (max-width: 919px) and (min-width: 760px) {
+    height: 20rem;
+  }
+
+  @media screen and (max-width: 759px) {
+    flex-direction: column;
+    height: 50rem;
+  }
 `;
 
 Main.PlayerArea = styled.div`
@@ -43,6 +52,61 @@ Main.PlayerArea = styled.div`
     height: 0.125rem;
     background-color: #384c6b;
   }
+
+  @media screen and (max-width: 1200px) and (min-width: 920px) {
+    width: 45%;
+    height: 20rem;
+
+    &::before {
+      height: 10rem;
+      width: 10rem;
+      right: calc(50% - 5rem);
+      bottom: calc(50% - 3rem);
+    }
+
+    &::after {
+      bottom: 4.55rem;
+    }
+  }
+
+  @media screen and (max-width: 919px) and (min-width: 760px) {
+    width: 45%;
+    height: 20rem;
+    &::before {
+      height: 7.5rem;
+      width: 7.5rem;
+      right: calc(50% - 3.5rem);
+      bottom: calc(45%);
+    }
+  }
+
+  @media screen and (max-width: 759px) and (min-width: 500px) {
+    width: 100%;
+    height: 45%;
+    margin-bottom: 5%;
+
+    &::before {
+      height: 10rem;
+      width: 10rem;
+      right: calc(50% - 4.5rem);
+      bottom: calc(45%);
+    }
+  }
+
+  @media screen and (max-width: 499px) {
+    width: 100%;
+    height: 45%;
+    margin-bottom: 5%;
+    /* flex-wrap: nowrap; */
+    justify-content: center;
+
+    &::before {
+      height: 10rem;
+      width: 10rem;
+      right: calc(50% - 4.5rem);
+      bottom: calc(25%);
+    }
+  }
 `;
 
 Main.Ranking = styled.div`
@@ -52,6 +116,21 @@ Main.Ranking = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   background-image: url("https://res.cloudinary.com/dhmkfekt2/image/upload/v1633575907/58889546bc2fc2ef3a1860b8_kkud4g.png");
   background-size: cover;
+
+  @media screen and (max-width: 1200px) and (min-width: 920px) {
+    width: 45%;
+    height: 20rem;
+  }
+
+  @media screen and (max-width: 919px) and (min-width: 760px) {
+    width: 45%;
+    height: 20rem;
+  }
+
+  @media screen and (max-width: 759px) {
+    width: 100%;
+    height: 50%;
+  }
 `;
 
 Main.MiniCard = styled.div`
@@ -79,6 +158,55 @@ Main.MiniCard = styled.div`
 
   p {
     text-align: center;
+  }
+
+  @media screen and (max-width: 1200px) and (min-width: 920px) {
+    margin: 0.3rem 10%;
+    width: 4rem;
+    height: 4rem;
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
+    p {
+      font-size: 0.7rem;
+      text-align: center;
+    }
+  }
+  @media screen and (max-width: 919px) and (min-width: 760px) {
+    margin: 0.3rem 10%;
+    width: 4rem;
+    height: 4rem;
+    .icon {
+      width: 2rem;
+      height: 2rem;
+    }
+    p {
+      font-size: 0.7rem;
+      text-align: center;
+    }
+  }
+
+  @media screen and (max-width: 759px) and (min-width: 500px) {
+    margin: 0.5rem 15%;
+    width: 4rem;
+    height: 4rem;
+  }
+
+  @media screen and (max-width: 499px) {
+    margin: 5% 5% auto 5%;
+    /* margin-right: 40%; */
+    width: 2rem;
+    height: 2rem;
+
+    .icon {
+      width: 1.5rem;
+      height: 1.5rem;
+      margin: 15% auto;
+    }
+    p {
+      font-size: 0.7rem;
+    }
   }
 `;
 

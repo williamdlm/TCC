@@ -31,7 +31,7 @@ export default function Home() {
           </Header.StatsInfo>
         </Header.Stats>
         <Header.Infos
-          as={motion.section}
+          as={motion.div}
           transition={{ delay: 0, duration: 1 }}
           variants={{
             show: { opacity: 1, y: "0" },
@@ -41,7 +41,7 @@ export default function Home() {
           animate="show"
         >
           <Header.InfoBar
-            as={motion.section}
+            as={motion.div}
             transition={{ delay: 0.5, duration: 0.5 }}
             variants={{
               show: { opacity: 1, y: "0" },
@@ -59,7 +59,7 @@ export default function Home() {
           </Header.InfoBar>
         </Header.Infos>
         <Header.ExperienceBar
-          as={motion.section}
+          as={motion.div}
           transition={{ delay: 1, duration: 0.5 }}
           variants={{
             show: { opacity: 1, y: "0" },
@@ -71,7 +71,7 @@ export default function Home() {
       </Header>
       <Main>
         <Main.PlayerArea
-          as={motion.section}
+          as={motion.div}
           transition={{ delay: 1, duration: 0.5 }}
           variants={{
             show: { opacity: 1, x: "0" },
@@ -112,7 +112,7 @@ export default function Home() {
           </Main.MiniCard>
         </Main.PlayerArea>
         <Main.Ranking
-          as={motion.section}
+          as={motion.div}
           transition={{ delay: 1.5, duration: 1 }}
           variants={{
             show: { opacity: 1 },

@@ -8,6 +8,13 @@ const Header = styled.div`
   flex-wrap: wrap;
 
   /* background-color: ${({ theme }) => theme.colors.primary}; */
+
+  @media screen and (max-width: 859px) {
+    * {
+      margin: 0;
+      padding: 0;
+    }
+  }
 `;
 
 Header.Stats = styled.div`
@@ -23,6 +30,10 @@ Header.Stats = styled.div`
   * {
     margin: 0;
   }
+
+  @media screen and (max-width: 1020px) {
+    flex-direction: column;
+  }
 `;
 
 Header.StatsPicture = styled.div`
@@ -30,6 +41,15 @@ Header.StatsPicture = styled.div`
   height: 5rem;
   background-color: white;
   border-radius: 50%;
+  @media screen and (max-width: 1020px) and (min-width: 860px) {
+    width: 4rem;
+    height: 4rem;
+    margin-top: 0.325rem;
+    margin-bottom: 0.325rem;
+  }
+  @media screen and (max-width: 859px) {
+    display: none;
+  }
 `;
 
 Header.StatsInfo = styled.div`
@@ -47,6 +67,30 @@ Header.StatsInfo = styled.div`
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.red};
   }
+  @media screen and (max-width: 1020px) and (min-width: 860px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    p {
+      display: block;
+      text-align: center;
+    }
+    p:first-child {
+      flex-basis: 100%;
+    }
+  }
+
+  @media screen and (max-width: 859px) {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  @media screen and (max-width: 600px) {
+    p {
+      font-size: 0.725rem;
+    }
+  }
 `;
 
 Header.Infos = styled.div`
@@ -56,6 +100,11 @@ Header.Infos = styled.div`
   height: 7rem;
   //background-color: red;
   flex-wrap: wrap;
+  @media screen and (max-width: 859px) {
+    p {
+      font-size: 0.625rem;
+    }
+  }
 `;
 
 Header.InfoBar = styled.div`
@@ -70,6 +119,8 @@ Header.InfoBar = styled.div`
 `;
 
 Header.ExperienceBar = styled.div`
+  display: flex;
+  justify-content: end;
   position: relative;
   margin-top: 2rem;
   width: 100%;
@@ -79,12 +130,11 @@ Header.ExperienceBar = styled.div`
 
   &::before {
     position: absolute;
-    display: block;
-    left: calc(100% - 6rem);
     top: -1.5rem;
     width: 10rem;
     content: "Experience";
     font-style: italic;
+    text-align: right;
   }
 `;
 
