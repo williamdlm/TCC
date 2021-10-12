@@ -3,8 +3,8 @@ import db from "../db.json";
 import { ExperienceProvider } from "../src/contexts/ExperienceContext";
 
 const GlobalStyle = createGlobalStyle`
-   @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
-   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+   /* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
+   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap'); */
 
   * {
     box-sizing: border-box;

@@ -6,8 +6,8 @@ import db from "../../../db.json";
 
 const ExperienceBar = styled.div`
   display: flex;
-  /* justify-content: end; */
-  overflow: hidden;
+  justify-content: end;
+  /* overflow: hidden; */
   position: relative;
   margin-top: 2rem;
   width: 100%;
@@ -15,14 +15,14 @@ const ExperienceBar = styled.div`
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.primary};
 
-  /* &::after {
+  &::before {
+    flex: 1;
     position: absolute;
     top: -1.5rem;
-    width: 10rem;
     content: "Experience";
     font-style: italic;
     text-align: right;
-  } */
+  }
 `;
 
 function ExpBar() {
@@ -45,12 +45,19 @@ function ExpBar() {
     >
       <div
         style={{
-          backgroundColor: `${db.theme.colors.red}`,
           height: "100%",
-          width: `${percentToNextLevel}%`,
-          alignSelf: "self-start",
+          width: "100%",
         }}
-      />
+      >
+        <div
+          style={{
+            backgroundColor: `${db.theme.colors.red}`,
+            height: "100%",
+            borderRadius: "50px",
+            width: `${percentToNextLevel}%`,
+          }}
+        />
+      </div>
     </ExperienceBar>
   );
 }

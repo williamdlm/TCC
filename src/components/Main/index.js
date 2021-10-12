@@ -81,7 +81,7 @@ Main.Ranking = styled.div`
   border-radius: 50px;
   background-color: ${({ theme }) => theme.colors.primary};
   background-image: url("https://res.cloudinary.com/dhmkfekt2/image/upload/v1633575907/58889546bc2fc2ef3a1860b8_kkud4g.png");
-  background-size: cover;
+  background-size: 25vmax;
 
   @media screen and (max-width: 849px) {
     width: 100%;
