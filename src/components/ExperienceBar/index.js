@@ -1,0 +1,58 @@
+import styled from "styled-components";
+import { useContext } from "react";
+import { ExperienceContext } from "../../contexts/ExperienceContext";
+import { motion } from "framer-motion";
+import db from "../../../db.json";
+
+const ExperienceBar = styled.div`
+  display: flex;
+  /* justify-content: end; */
+  overflow: hidden;
+  position: relative;
+  margin-top: 2rem;
+  width: 100%;
+  height: 1rem;
+  border-radius: 50px;
+  background-color: ${({ theme }) => theme.colors.primary};
+
+  /* &::after {
+    position: absolute;
+    top: -1.5rem;
+    width: 10rem;
+    content: "Experience";
+    font-style: italic;
+    text-align: right;
+  } */
+`;
+
+function ExpBar() {
+  const { currentExperience, experienceToNextLevel } =
+    useContext(ExperienceContext);
+  const percentToNextLevel = Math.round(
+    (currentExperience * 100) / experienceToNextLevel
+  );
+  // console.log(level);
+  return (
+    <ExperienceBar
+      as={motion.div}
+      transition={{ delay: 1, duration: 0.5 }}
+      variants={{
+        show: { opacity: 1, y: "0" },
+        hidden: { opacity: 0, y: "100%" },
+      }}
+      initial="hidden"
+      animate="show"
+    >
+      <div
+        style={{
+          backgroundColor: `${db.theme.colors.red}`,
+          height: "100%",
+          width: `${percentToNextLevel}%`,
+          alignSelf: "self-start",
+        }}
+      />
+    </ExperienceBar>
+  );
+}
+
+export default ExpBar;

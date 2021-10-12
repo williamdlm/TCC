@@ -147,7 +147,7 @@ export default function QuizPage() {
   React.useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
-    }, 1 * 100);
+    }, 1 * 2000);
   }, []);
 
   function handleSubmitQuiz() {
@@ -160,27 +160,6 @@ export default function QuizPage() {
   }
   return (
     <Background>
-      <Header>
-        <Header.Stats>
-          <Header.StatsPicture />
-          <Header.StatsInfo>
-            <p>William Mota</p>
-            <p>Level 24</p>
-            <p>xp 220</p>
-          </Header.StatsInfo>
-        </Header.Stats>
-        <Header.Infos>
-          <Header.InfoBar>
-            <p>Title:</p>
-            <p>The Lord of Logic</p>
-          </Header.InfoBar>
-          <Header.InfoBar>
-            <p>Class:</p>
-            <p>Human</p>
-          </Header.InfoBar>
-        </Header.Infos>
-        <Header.ExperienceBar />
-      </Header>
       <QuizContainer>
         {screenState === screenStates.QUIZ && (
           <QuestionWidget

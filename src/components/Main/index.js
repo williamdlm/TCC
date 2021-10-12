@@ -1,5 +1,7 @@
 import styled from "styled-components";
 import db from "../../../db.json";
+import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 
 const Main = styled.div`
   justify-content: space-between;
@@ -210,4 +212,60 @@ Main.MiniCard = styled.div`
   }
 `;
 
-export default Main;
+export function MainComplete() {
+  const router = useRouter();
+  return (
+    <Main>
+      <Main.PlayerArea
+        as={motion.div}
+        transition={{ delay: 1, duration: 0.5 }}
+        variants={{
+          show: { opacity: 1, x: "0" },
+          hidden: { opacity: 0, x: "-100%" },
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        <Main.MiniCard>
+          <img
+            className="icon classic"
+            src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633396500/swords_rktxam.svg"
+            onClick={() => {
+              router.push(`/quiz`);
+            }}
+          />
+          <p>Classic</p>
+        </Main.MiniCard>
+        <Main.MiniCard>
+          <img
+            className="icon"
+            src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/scroll_jbw9wv.png"
+          />
+          <p>About</p>
+        </Main.MiniCard>
+        <Main.MiniCard>
+          <img
+            className="icon"
+            src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/lock_l5sw35.png"
+          />
+        </Main.MiniCard>
+        <Main.MiniCard>
+          <img
+            className="icon"
+            src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/lock_l5sw35.png"
+          />
+        </Main.MiniCard>
+      </Main.PlayerArea>
+      <Main.Ranking
+        as={motion.div}
+        transition={{ delay: 1.5, duration: 1 }}
+        variants={{
+          show: { opacity: 1 },
+          hidden: { opacity: 0 },
+        }}
+        initial="hidden"
+        animate="show"
+      />
+    </Main>
+  );
+}

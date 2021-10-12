@@ -1,4 +1,8 @@
 import styled from "styled-components";
+import { motion } from "framer-motion";
+import ExperienceBar from "../../components/ExperienceBar";
+import { ExperienceContext } from "../../contexts/ExperienceContext";
+import { useContext } from "react";
 
 const Header = styled.div`
   margin: 1% auto 5% auto;
@@ -118,24 +122,60 @@ Header.InfoBar = styled.div`
   border-radius: 50px;
 `;
 
-Header.ExperienceBar = styled.div`
-  display: flex;
-  justify-content: end;
-  position: relative;
-  margin-top: 2rem;
-  width: 100%;
-  height: 1rem;
-  border-radius: 50px;
-  background-color: ${({ theme }) => theme.colors.primary};
+function HeaderComplete() {
+  const { level, currentExperience, experienceToNextLevel } =
+    useContext(ExperienceContext);
+  console.log(experienceToNextLevel);
+  return (
+    <Header>
+      <Header.Stats
+        as={motion.section}
+        transition={{ delay: 0, duration: 1 }}
+        variants={{
+          show: { opacity: 1, x: "0" },
+          hidden: { opacity: 0, x: "100%" },
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        <Header.StatsPicture />
+        <Header.StatsInfo>
+          <p>William Mota</p>
+          <p>{`Level ${level}`}</p>
+          <p>{`xp ${currentExperience}`}</p>
+        </Header.StatsInfo>
+      </Header.Stats>
+      <Header.Infos
+        as={motion.div}
+        transition={{ delay: 0, duration: 1 }}
+        variants={{
+          show: { opacity: 1, y: "0" },
+          hidden: { opacity: 0, y: "100%" },
+        }}
+        initial="hidden"
+        animate="show"
+      >
+        <Header.InfoBar
+          as={motion.div}
+          transition={{ delay: 0.5, duration: 0.5 }}
+          variants={{
+            show: { opacity: 1, y: "0" },
+            hidden: { opacity: 0, y: "100%" },
+          }}
+          initial="hidden"
+          animate="show"
+        >
+          <p>Title:</p>
+          <p>The Lord of Logic</p>
+        </Header.InfoBar>
+        <Header.InfoBar>
+          <p>Class:</p>
+          <p>Human</p>
+        </Header.InfoBar>
+      </Header.Infos>
+      <ExperienceBar />
+    </Header>
+  );
+}
 
-  &::before {
-    position: absolute;
-    top: -1.5rem;
-    width: 10rem;
-    content: "Experience";
-    font-style: italic;
-    text-align: right;
-  }
-`;
-
-export default Header;
+export default HeaderComplete;
