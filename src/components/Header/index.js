@@ -97,9 +97,10 @@ Header.InfoBar = styled.div`
   height: 1.75rem;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 50px;
+  overflow: overflow;
 
   @media screen and (max-width: 800px) {
-    font-size: 2vmax;
+    font-size: 1.7vmax;
   }
 `;
 
