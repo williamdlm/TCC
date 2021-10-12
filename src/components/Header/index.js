@@ -107,7 +107,6 @@ Header.InfoBar = styled.div`
 function HeaderComplete() {
   const { level, currentExperience, experienceToNextLevel, name } =
     useContext(ExperienceContext);
-  console.log(`ExperienceToNextLevel: ${experienceToNextLevel}`);
   const namePart = name.split(" ");
   return (
     <Header>

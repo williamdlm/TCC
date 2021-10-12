@@ -7,7 +7,10 @@ import Button from "../src/components/Button";
 import AlternativesForm from "../src/components/AlternativeForms";
 import BackLinkArrow from "../src/components/BackLinkArrow";
 import { useRouter } from "next/router";
-import { ExperienceContext } from "../src/contexts/ExperienceContext";
+import {
+  ExperienceContext,
+  ExperienceProvider,
+} from "../src/contexts/ExperienceContext";
 
 function ResultWidget({ results }) {
   const router = useRouter();
@@ -62,80 +65,78 @@ function QuestionWidget({
   const hasAlternativeSelected = selectedAlternative !== undefined;
   const { completeQuestion } = useContext(ExperienceContext);
   return (
-    <>
-      <Widget style={{ margin: "0 auto" }}>
-        <Widget.Header>
-          <BackLinkArrow href="/" />
-          <h3>
-            {/* <BackLinkArrow href="/" /> */}
-            Pergunta {`${questionIndex + 1}`} de {`${totalQuestions}`}
-          </h3>
-        </Widget.Header>
+    <Widget style={{ margin: "0 auto" }}>
+      <Widget.Header>
+        <BackLinkArrow href="/" />
+        <h3>
+          {/* <BackLinkArrow href="/" /> */}
+          Pergunta {`${questionIndex + 1}`} de {`${totalQuestions}`}
+        </h3>
+      </Widget.Header>
 
-        <img
-          alt="Descrição"
-          style={{
-            width: "100%",
-            height: "200px",
-            objectFit: "cover",
+      <img
+        alt="Descrição"
+        style={{
+          width: "100%",
+          height: "200px",
+          objectFit: "cover",
+        }}
+        src={question.image}
+      />
+
+      <Widget.Content>
+        <h2>{question.title}</h2>
+        <p>{question.description}</p>
+
+        <AlternativesForm
+          onSubmit={(event) => {
+            event.preventDefault();
+            setIsQuestionSubmited(true);
+            addResult(isCorrect);
+            setTimeout(() => {
+              {
+                isCorrect && completeQuestion(1);
+              }
+              onSubmit();
+              setIsQuestionSubmited(false);
+              setSelectedAlternative(undefined);
+            }, 1 * 2000);
           }}
-          src={question.image}
-        />
-
-        <Widget.Content>
-          <h2>{question.title}</h2>
-          <p>{question.description}</p>
-
-          <AlternativesForm
-            onSubmit={(event) => {
-              event.preventDefault();
-              setIsQuestionSubmited(true);
-              addResult(isCorrect);
-              setTimeout(() => {
-                {
-                  isCorrect && completeQuestion(1);
-                }
-                onSubmit();
-                setIsQuestionSubmited(false);
-                setSelectedAlternative(undefined);
-              }, 1 * 2000);
-            }}
-          >
-            {question.alternatives.map((alternative, alternativeIndex) => {
-              const alternativeId = `alternative__${alternativeIndex}`;
-              const alternativeStatus = isCorrect ? "SUCCESS" : "ERROR";
-              const isSelect = selectedAlternative === alternativeIndex;
-              return (
-                <Widget.Topic
-                  as="label"
-                  htmlFor={alternativeId}
-                  key={alternativeId}
-                  data-selected={isSelect}
-                  data-status={isQuestionSubmited && alternativeStatus}
-                >
-                  <input
-                    style={{
-                      display: "none",
-                    }}
-                    id={alternativeId}
-                    type="radio"
-                    name={questId}
-                    onChange={() => setSelectedAlternative(alternativeIndex)}
-                  />
-                  {alternative}
-                </Widget.Topic>
-              );
-            })}
-            <Button type="submit" disabled={!hasAlternativeSelected}>
-              Confirmar
-            </Button>
-            {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
-            {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
-          </AlternativesForm>
-          {/* <pre>{JSON.stringify(question, null, 4)}</pre> */}
-        </Widget.Content>
-      </Widget>
-    </>
+        >
+          {question.alternatives.map((alternative, alternativeIndex) => {
+            const alternativeId = `alternative__${alternativeIndex}`;
+            const alternativeStatus = isCorrect ? "SUCCESS" : "ERROR";
+            const isSelect = selectedAlternative === alternativeIndex;
+            return (
+              <Widget.Topic
+                as="label"
+                htmlFor={alternativeId}
+                key={alternativeId}
+                data-selected={isSelect}
+                data-status={isQuestionSubmited && alternativeStatus}
+              >
+                <input
+                  style={{
+                    display: "none",
+                  }}
+                  id={alternativeId}
+                  type="radio"
+                  name={questId}
+                  onChange={() => setSelectedAlternative(alternativeIndex)}
+                />
+                {alternative}
+              </Widget.Topic>
+            );
+          })}
+          <Button type="submit" disabled={!hasAlternativeSelected}>
+            Confirmar
+          </Button>
+          {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
+          {isQuestionSubmited && !isCorrect && <p>Você errou!</p>}
+        </AlternativesForm>
+        {/* <pre>{JSON.stringify(question, null, 4)}</pre> */}
+      </Widget.Content>
+    </Widget>
   );
 }
 
@@ -145,7 +146,7 @@ const screenStates = {
   RESULT: "RESULT",
 };
 
-export default function QuizPage() {
+export default function QuizPage(props) {
   const [screenState, setScreenState] = React.useState(screenStates.LOADING);
   const [results, setResult] = React.useState([]);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
@@ -172,22 +173,37 @@ export default function QuizPage() {
     }
   }
   return (
-    <Background>
-      <QuizContainer>
-        {screenState === screenStates.QUIZ && (
-          <QuestionWidget
-            question={question}
-            totalQuestions={totalQuestions}
-            questionIndex={questionIndex}
-            onSubmit={handleSubmitQuiz}
-            addResult={addResult}
-          />
-        )}
-        {screenState === screenStates.LOADING && <LoadingWidget />}
-        {screenState === screenStates.RESULT && (
-          <ResultWidget results={results} />
-        )}
-      </QuizContainer>
-    </Background>
+    <ExperienceProvider
+      level={props.level}
+      currentExperience={props.currentExperience}
+    >
+      <Background>
+        <QuizContainer>
+          {screenState === screenStates.QUIZ && (
+            <QuestionWidget
+              question={question}
+              totalQuestions={totalQuestions}
+              questionIndex={questionIndex}
+              onSubmit={handleSubmitQuiz}
+              addResult={addResult}
+            />
+          )}
+          {screenState === screenStates.LOADING && <LoadingWidget />}
+          {screenState === screenStates.RESULT && (
+            <ResultWidget results={results} />
+          )}
+        </QuizContainer>
+      </Background>
+    </ExperienceProvider>
   );
 }
+
+export const getServerSideProps = async (ctx) => {
+  const { level, currentExperience } = ctx.req.cookies;
+  return {
+    props: {
+      level: Number(level),
+      currentExperience: Number(currentExperience),
+    },
+  };
+};

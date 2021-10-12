@@ -29,6 +29,7 @@ const Span = styled.span`
   margin: 0 1%;
   display: block;
   width: 5%;
+  text-align: center;
 `;
 
 function ExpBar() {
@@ -37,7 +38,7 @@ function ExpBar() {
   const percentToNextLevel = Math.round(
     (currentExperience * 100) / experienceToNextLevel
   );
-  // console.log(level);
+  // console.log(experienceToNextLevel);
   return (
     <div style={{ width: "100%", display: "flex", alignItems: "baseline" }}>
       <Span
