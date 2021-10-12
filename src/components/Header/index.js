@@ -10,15 +10,6 @@ const Header = styled.div`
   width: 80%;
   height: 7rem;
   flex-wrap: wrap;
-
-  /* background-color: ${({ theme }) => theme.colors.primary}; */
-
-  @media screen and (max-width: 859px) {
-    * {
-      margin: 0;
-      padding: 0;
-    }
-  }
 `;
 
 Header.Stats = styled.div`
@@ -34,10 +25,6 @@ Header.Stats = styled.div`
   * {
     margin: 0;
   }
-
-  @media screen and (max-width: 1020px) {
-    flex-direction: column;
-  }
 `;
 
 Header.StatsPicture = styled.div`
@@ -45,13 +32,12 @@ Header.StatsPicture = styled.div`
   height: 5rem;
   background-color: white;
   border-radius: 50%;
-  @media screen and (max-width: 1020px) and (min-width: 860px) {
-    width: 4rem;
-    height: 4rem;
-    margin-top: 0.325rem;
-    margin-bottom: 0.325rem;
+
+  @media screen and (max-width: 1100px) and (min-width: 950px) {
+    transform: scale(0.85);
   }
-  @media screen and (max-width: 859px) {
+
+  @media screen and (max-width: 800px) {
     display: none;
   }
 `;
@@ -61,39 +47,36 @@ Header.StatsInfo = styled.div`
     display: block;
     margin-bottom: 0.3rem;
   }
-  p:first-child {
+  .fullNamePlayer {
     font-weight: bolder;
   }
-  p:nth-child(2) {
+
+  .firstNamePlayer {
+    display: none;
+  }
+  .levelPlayer {
     color: ${({ theme }) => theme.colors.green};
   }
-  p:nth-child(3) {
+  .experiencePlayer {
     text-transform: uppercase;
     color: ${({ theme }) => theme.colors.red};
   }
-  @media screen and (max-width: 1020px) and (min-width: 860px) {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+  @media screen and (max-width: 1100px) and (min-width: 950px) {
     p {
+      transform: scale(0.85);
+    }
+  }
+
+  @media screen and (max-width: 949px) {
+    .fullNamePlayer {
+      display: none;
+    }
+    .firstNamePlayer {
       display: block;
-      text-align: center;
-    }
-    p:first-child {
-      flex-basis: 100%;
     }
   }
-
-  @media screen and (max-width: 859px) {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  @media screen and (max-width: 600px) {
-    p {
-      font-size: 0.725rem;
-    }
+  @media screen and (max-width: 800px) {
+    transform: scale(1);
   }
 `;
 
@@ -102,13 +85,7 @@ Header.Infos = styled.div`
   align-items: center;
   width: 70%;
   height: 7rem;
-  //background-color: red;
   flex-wrap: wrap;
-  @media screen and (max-width: 859px) {
-    p {
-      font-size: 0.625rem;
-    }
-  }
 `;
 
 Header.InfoBar = styled.div`
@@ -120,12 +97,18 @@ Header.InfoBar = styled.div`
   height: 1.75rem;
   background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 50px;
+
+  @media screen and (max-width: 800px) {
+    font-size: 2vmax;
+  }
 `;
 
 function HeaderComplete() {
-  const { level, currentExperience, experienceToNextLevel } =
+  const { level, currentExperience, experienceToNextLevel, name } =
     useContext(ExperienceContext);
   console.log(experienceToNextLevel);
+  const namePart = name.split(" ");
+  console.log(namePart[0]);
   return (
     <Header>
       <Header.Stats
@@ -140,9 +123,10 @@ function HeaderComplete() {
       >
         <Header.StatsPicture />
         <Header.StatsInfo>
-          <p>William Mota</p>
-          <p>{`Level ${level}`}</p>
-          <p>{`xp ${currentExperience}`}</p>
+          <p className="fullNamePlayer">William Mota</p>
+          <p className="firstNamePlayer">William</p>
+          <p className="levelPlayer">{`Level ${level}`}</p>
+          <p className="experiencePlayer">{`xp ${currentExperience}`}</p>
         </Header.StatsInfo>
       </Header.Stats>
       <Header.Infos

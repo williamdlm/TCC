@@ -6,6 +6,7 @@ export function ExperienceProvider({ children }) {
   const [level, setLevel] = useState(1);
   const [currentExperience, setCurrentExperience] = useState(15);
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
+  const name = "William Mota";
 
   function levelUp() {
     setLevel(level + 1);
@@ -13,7 +14,7 @@ export function ExperienceProvider({ children }) {
 
   return (
     <ExperienceContext.Provider
-      value={{ level, currentExperience, levelUp, experienceToNextLevel }}
+      value={{ level, currentExperience, levelUp, experienceToNextLevel, name }}
     >
       {children}
     </ExperienceContext.Provider>
