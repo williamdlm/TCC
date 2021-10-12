@@ -1,7 +1,5 @@
-import React from "react";
-import Head from "next/dist/shared/lib/head";
+import React, { useContext } from "react";
 import Background from "../src/components/Background";
-import Header from "../src/components/Header";
 import Widget from "../src/components/Widget";
 import db from "../db.json";
 import QuizContainer from "../src/components/QuizContainer";
@@ -9,9 +7,13 @@ import Button from "../src/components/Button";
 import AlternativesForm from "../src/components/AlternativeForms";
 import BackLinkArrow from "../src/components/BackLinkArrow";
 import { useRouter } from "next/router";
+import { ExperienceContext } from "../src/contexts/ExperienceContext";
 
 function ResultWidget({ results }) {
   const router = useRouter();
+
+  // setCurrentExperience(amountExp);
+  // console.log(`AmountExp: ${amountExp}`);
   return (
     <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>RESULTADO</Widget.Header>
@@ -58,6 +60,7 @@ function QuestionWidget({
   const questId = `question__${questionIndex}`;
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
+  const { completeQuestion } = useContext(ExperienceContext);
   return (
     <>
       <Widget style={{ margin: "0 auto" }}>
@@ -89,6 +92,9 @@ function QuestionWidget({
               setIsQuestionSubmited(true);
               addResult(isCorrect);
               setTimeout(() => {
+                {
+                  isCorrect && completeQuestion(1);
+                }
                 onSubmit();
                 setIsQuestionSubmited(false);
                 setSelectedAlternative(undefined);
@@ -117,11 +123,9 @@ function QuestionWidget({
                     onChange={() => setSelectedAlternative(alternativeIndex)}
                   />
                   {alternative}
-                  {console.log(isSelect)}
                 </Widget.Topic>
               );
             })}
-            {console.log(`selectAlternative: ${selectedAlternative}`)}
             <Button type="submit" disabled={!hasAlternativeSelected}>
               Confirmar
             </Button>
