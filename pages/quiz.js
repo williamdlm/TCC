@@ -8,10 +8,12 @@ import QuizContainer from "../src/components/QuizContainer";
 import Button from "../src/components/Button";
 import AlternativesForm from "../src/components/AlternativeForms";
 import BackLinkArrow from "../src/components/BackLinkArrow";
+import { useRouter } from "next/router";
 
 function ResultWidget({ results }) {
+  const router = useRouter();
   return (
-    <Widget>
+    <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>RESULTADO</Widget.Header>
       <Widget.Content>
         <p>{`Você acertou ${results.filter((x) => x).length} questões`}</p>
@@ -23,6 +25,13 @@ function ResultWidget({ results }) {
           ))}
         </ul>
       </Widget.Content>
+      <Button
+        onClick={() => {
+          router.push(`/`);
+        }}
+      >
+        Voltar para inicio
+      </Button>
     </Widget>
   );
 }
@@ -51,7 +60,7 @@ function QuestionWidget({
   const hasAlternativeSelected = selectedAlternative !== undefined;
   return (
     <>
-      <Widget>
+      <Widget style={{ margin: "0 auto" }}>
         <Widget.Header>
           <BackLinkArrow href="/" />
           <h3>
