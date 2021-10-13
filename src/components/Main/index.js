@@ -2,6 +2,7 @@ import styled from "styled-components";
 import db from "../../../db.json";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import StatsBar from "../StatsBar";
 
 const Main = styled.div`
   justify-content: space-between;
@@ -176,6 +177,7 @@ export function MainComplete() {
             />
           </Main.MiniCard>
         </Main.BlockMiniCard>
+        <StatsBar />
       </Main.PlayerArea>
       <Main.Ranking
         as={motion.div}
