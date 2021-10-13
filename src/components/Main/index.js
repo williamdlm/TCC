@@ -41,7 +41,7 @@ Main.PlayerArea = styled.div`
   &::after {
     right: 10%;
     position: absolute;
-    bottom: 6.5rem;
+    bottom: 7rem;
     display: block;
     margin: 0 auto;
     content: "";
@@ -100,6 +100,7 @@ Main.MiniCard = styled.div`
   height: 5rem;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.colors.secondary};
+  cursor: pointer;
 
   * {
     margin: 0;
@@ -145,22 +146,23 @@ export function MainComplete() {
         animate="show"
       >
         <Main.BlockMiniCard>
-          <Main.MiniCard>
+          <Main.MiniCard
+            onClick={() => {
+              router.push(`/quiz`);
+            }}
+          >
             <img
               className="icon classic"
               src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633396500/swords_rktxam.svg"
-              onClick={() => {
-                router.push(`/quiz`);
-              }}
             />
-            <p>Classic</p>
+            <p>Classico</p>
           </Main.MiniCard>
           <Main.MiniCard>
             <img
               className="icon"
               src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/scroll_jbw9wv.png"
             />
-            <p>About</p>
+            <p>Sobre</p>
           </Main.MiniCard>
         </Main.BlockMiniCard>
         <Main.BlockMiniCard>

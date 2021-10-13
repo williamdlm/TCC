@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import ExperienceBar from "../../components/ExperienceBar";
 import { ExperienceContext } from "../../contexts/ExperienceContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 const Header = styled.div`
   margin: 1% auto 5% auto;
@@ -105,9 +105,18 @@ Header.InfoBar = styled.div`
 `;
 
 function HeaderComplete() {
-  const { level, currentExperience, experienceToNextLevel, name } =
-    useContext(ExperienceContext);
+  const {
+    level,
+    currentExperience,
+    experienceToNextLevel,
+    titleUser,
+    handleTitles,
+    name,
+  } = useContext(ExperienceContext);
   const namePart = name.split(" ");
+  useEffect(() => {
+    handleTitles();
+  }, []);
   return (
     <Header>
       <Header.Stats
@@ -148,12 +157,12 @@ function HeaderComplete() {
           initial="hidden"
           animate="show"
         >
-          <p>Title:</p>
-          <p>The Lord of Logic</p>
+          <p>Titulo:</p>
+          <p>{titleUser}</p>
         </Header.InfoBar>
         <Header.InfoBar>
-          <p>Class:</p>
-          <p>Human</p>
+          <p>Classe:</p>
+          <p>Humano</p>
         </Header.InfoBar>
       </Header.Infos>
       <ExperienceBar />

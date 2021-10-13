@@ -15,18 +15,18 @@
       ]
     },
     {
-      "image": "https://cdn.dribbble.com/users/1129235/screenshots/3123420/media/6802b1a795f43fb038aa3c7f60c88ee8.gif",
+      "image": "https://i.giphy.com/media/441veZw9vyx56/giphy.webp",
       "type": 0,
       "title": "De onde é a invenção do chuveiro elétrico?",
-      "description": "'O ser humano só evolui a partir da necessidade.' -Vivaldo Neto",
+      "description": "Alguns paises paises utilizam gás para aquecer a água.",
       "answer": 2,
       "alternatives": ["França", "Inglaterra", "Brasil", "Austrália", "Itália"]
     },
     {
-      "image": "https://cdn.dribbble.com/users/1129235/screenshots/3123420/media/6802b1a795f43fb038aa3c7f60c88ee8.gif",
+      "image": "https://i.giphy.com/media/l3nWhI38IWDofyDrW/giphy.webp",
       "type": 0,
       "title": "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
-      "description": "'O ser humano só evolui a partir da necessidade.' -Vivaldo Neto",
+      "description": "Historia do Brasil, essa eu sei que você sabê...",
       "answer": 4,
       "alternatives": [
         "Jânio Quadros",
@@ -38,7 +38,7 @@
     },
     {
       "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
-      "type": 1,
+      "type": 0,
       "title": "Quais o menor e o maior país do mundo??",
       "description": "Essa é para aquecer...",
       "answer": 0,
@@ -51,7 +51,7 @@
     },
     {
       "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
-      "type": 1,
+      "type": 0,
       "title": "Qual desses Países não é Europeu?",
       "description": "Essa é para aquecer...",
       "answer": 2,
@@ -59,7 +59,7 @@
     },
     {
       "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
-      "type": 1,
+      "type": 0,
       "title": "O Brasil é de que continente?",
       "description": "Essa é para aquecer...",
       "answer": 1,
@@ -69,6 +69,97 @@
         "America central",
         "Europa",
         "Asia"
+      ]
+    },
+    {
+      "image": "https://i.giphy.com/media/MdeSslU80bVsTtWxEh/giphy.webp",
+      "type": 1,
+      "title": "A energia armazenada em uma bateria é:",
+      "description": "Voltz fazer errar...",
+      "answer": 0,
+      "alternatives": ["Quimica", "Eletrica", "Mecânica"]
+    },
+    {
+      "image": "https://i.giphy.com/media/gw3JAy8LMvvw5sfS/giphy.webp",
+      "type": 1,
+      "title": "Quem foi responsável pelo desenvolvimento da Teoria da Relatividade Geral?",
+      "description": "É relativo...",
+      "answer": 2,
+      "alternatives": [
+        "Isaac Newton",
+        "Charles Darwin",
+        "Albert Einstein",
+        "Thomas Edson"
+      ]
+    },
+    {
+      "image": "https://i.giphy.com/media/l2YSowMXk0Qu0DFm0/giphy.webp",
+      "type": 1,
+      "title": "O processo de conversão do vapor de água para água na superficie de um copo de vidro frio é conhecido como:",
+      "description": "Não esqueça de se hidratar...",
+      "answer": 1,
+      "alternatives": ["Evaporação", "Condensação", "Vaporização", "Ebulição"]
+    },
+    {
+      "image": "https://i.giphy.com/media/l0HlxOxMcpxMxDi8M/giphy.webp",
+      "type": 2,
+      "title": "O que está errado na frase a seguir? 'He were doing the exercises'",
+      "description": "Do you speak english?",
+      "answer": 3,
+      "alternatives": ["the", "exercises", "doing ", "were", "He"]
+    },
+    {
+      "image": "https://i.giphy.com/media/l0MYGkpex3mWWZVni/giphy.webp",
+      "type": 2,
+      "title": "O que significa 'I wonder...'",
+      "description": "Hm...",
+      "answer": 0,
+      "alternatives": [
+        "'Eu gostaria de saber...'",
+        "'Eu desejo...'",
+        "'Eu prefiro...' ",
+        "'Eu quero...'"
+      ]
+    },
+    {
+      "image": "https://i.giphy.com/media/k8mfzfxm6WpqHFBg6o/giphy.webp",
+      "type": 3,
+      "title": "No rugby, ou futebol americano, qual é o formato da bola usada durante o jogo?",
+      "description": "Mostre seu entendimento sobre esportes.",
+      "answer": 1,
+      "alternatives": [
+        "Quadrada",
+        "Oval",
+        "Redonda",
+        "Triangular",
+        "Retangular"
+      ]
+    },
+    {
+      "image": "https://i.giphy.com/media/oQt5YnUZmXq02ad84u/giphy.webp",
+      "type": 3,
+      "title": "No vôlei, o que acontece quando a bola que um jogador tocou bate na rede?",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "É ponto para o time do jogador",
+        "O time do jogador perde 1 ponto",
+        "O time do jogador é eliminado e o jogo acaba",
+        "É ponto para o time adversário",
+        "É ponto para os dois times"
+      ]
+    },
+    {
+      "image": "https://i.giphy.com/media/3GnKKEw2v7bXi/giphy.webp",
+      "type": 4,
+      "title": "Qual é a Formação inicial dos Vingadores?",
+      "description": "Vingadores avante!!",
+      "answer": 1,
+      "alternatives": [
+        "Homem-Formiga, Vespa, Homem de Ferro, Thor e Hulk",
+        "Capitão América, Homem de Ferro, Hulk, Thor, Viúva Negra e Gavião Arqueiro",
+        "Homem-Formiga, Vespa, Doutor Estranho, Namor, Feiticeira Escarlate e Thor (Jane Foster)",
+        "Wolverine, Capitão América, Homem de Ferro, Hulk e Senhor Fantástico"
       ]
     }
   ]

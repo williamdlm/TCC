@@ -39,6 +39,13 @@
     "pirate": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060704/018-pirate_kt1uiw.png",
     "citizen": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633286796/017-robin_hood_zzwzha.png"
   },
+  "titulos": [
+    "O Aprendiz",
+    "Intelectual",
+    "Mestre das ciencias",
+    "O Sabio",
+    "Lorde do conhecimento"
+  ],
   "theme": {
     "colors": {
       "mainBg": "#000C1E",

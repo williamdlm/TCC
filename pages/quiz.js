@@ -65,8 +65,8 @@ function QuestionWidget({
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
   const { completeQuestion } = useContext(ExperienceContext);
-  console.log(question);
-  // console.log(questionIndex);
+  // console.log(question);
+  console.log(selectedAlternative);
   return (
     <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>
@@ -96,15 +96,13 @@ function QuestionWidget({
             event.preventDefault();
             setIsQuestionSubmited(true);
             addResult(isCorrect);
-            console.log(`before ${question}`);
             setTimeout(() => {
               {
                 isCorrect && completeQuestion(1);
               }
-              console.log(`after ${question}`);
               onSubmit();
-              setIsQuestionSubmited(false);
               setSelectedAlternative(undefined);
+              setIsQuestionSubmited(false);
             }, 1 * 2000);
           }}
         >
@@ -127,7 +125,7 @@ function QuestionWidget({
                   id={alternativeId}
                   type="radio"
                   name={questId}
-                  onChange={() => setSelectedAlternative(alternativeIndex)}
+                  onClick={() => setSelectedAlternative(alternativeIndex)}
                 />
                 {alternative}
               </Widget.Topic>
@@ -159,10 +157,9 @@ export default function QuizPage(props) {
   const [question, setQuestion] = React.useState(
     handleChangeQuestion(questionIndex)
   );
-  const totalQuestions = 2;
+  const totalQuestions = 5;
 
   function handleChangeQuestion(type) {
-    console.log("entrou");
     const questionsForType = dbQuestions.questions.filter((question) => {
       return question.type === type;
     });
