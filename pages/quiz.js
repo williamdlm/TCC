@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import Background from "../src/components/Background";
 import Widget from "../src/components/Widget";
 import db from "../db.json";
+import dbQuestions from "../questions.json";
 import QuizContainer from "../src/components/QuizContainer";
 import Button from "../src/components/Button";
 import AlternativesForm from "../src/components/AlternativeForms";
@@ -64,6 +65,8 @@ function QuestionWidget({
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
   const { completeQuestion } = useContext(ExperienceContext);
+  console.log(question);
+  // console.log(questionIndex);
   return (
     <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>
@@ -93,10 +96,12 @@ function QuestionWidget({
             event.preventDefault();
             setIsQuestionSubmited(true);
             addResult(isCorrect);
+            console.log(`before ${question}`);
             setTimeout(() => {
               {
                 isCorrect && completeQuestion(1);
               }
+              console.log(`after ${question}`);
               onSubmit();
               setIsQuestionSubmited(false);
               setSelectedAlternative(undefined);
@@ -151,9 +156,20 @@ export default function QuizPage(props) {
   const [results, setResult] = React.useState([]);
   const [currentQuestion, setCurrentQuestion] = React.useState(0);
   const questionIndex = currentQuestion;
-  const question = db.questions[questionIndex];
-  const totalQuestions = db.questions.length;
+  const [question, setQuestion] = React.useState(
+    handleChangeQuestion(questionIndex)
+  );
+  const totalQuestions = 2;
 
+  function handleChangeQuestion(type) {
+    console.log("entrou");
+    const questionsForType = dbQuestions.questions.filter((question) => {
+      return question.type === type;
+    });
+    return questionsForType[
+      Math.floor(Math.random() * questionsForType.length)
+    ];
+  }
   function addResult(result) {
     setResult([...results, result]);
   }
@@ -168,6 +184,7 @@ export default function QuizPage(props) {
     const nextQuestion = questionIndex + 1;
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(nextQuestion);
+      setQuestion(handleChangeQuestion(nextQuestion));
     } else {
       setScreenState(screenStates.RESULT);
     }

@@ -1,0 +1,75 @@
+{
+  "questions": [
+    {
+      "image": "https://cdn.dribbble.com/users/1129235/screenshots/3123420/media/6802b1a795f43fb038aa3c7f60c88ee8.gif",
+      "type": 0,
+      "title": "De acordo com a teoria da evolução humana os primeiros hominídeos pertenciam ao grupo dos:",
+      "description": "'O ser humano só evolui a partir da necessidade.' -Vivaldo Neto",
+      "answer": 4,
+      "alternatives": [
+        "Homo habilis",
+        "Homo erectus",
+        "Homo ergaster",
+        "Homo sapiens",
+        "Australopithecus"
+      ]
+    },
+    {
+      "image": "https://cdn.dribbble.com/users/1129235/screenshots/3123420/media/6802b1a795f43fb038aa3c7f60c88ee8.gif",
+      "type": 0,
+      "title": "De onde é a invenção do chuveiro elétrico?",
+      "description": "'O ser humano só evolui a partir da necessidade.' -Vivaldo Neto",
+      "answer": 2,
+      "alternatives": ["França", "Inglaterra", "Brasil", "Austrália", "Itália"]
+    },
+    {
+      "image": "https://cdn.dribbble.com/users/1129235/screenshots/3123420/media/6802b1a795f43fb038aa3c7f60c88ee8.gif",
+      "type": 0,
+      "title": "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
+      "description": "'O ser humano só evolui a partir da necessidade.' -Vivaldo Neto",
+      "answer": 4,
+      "alternatives": [
+        "Jânio Quadros",
+        "Jacinto Anjos",
+        "Getúlio Vargas",
+        "João Figueiredo",
+        "João Goulart"
+      ]
+    },
+    {
+      "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
+      "type": 1,
+      "title": "Quais o menor e o maior país do mundo??",
+      "description": "Essa é para aquecer...",
+      "answer": 0,
+      "alternatives": [
+        "Vaticano e Rússia",
+        "Nauru e China",
+        "Mônaco e Canadá",
+        "Malta e Estados Unidos"
+      ]
+    },
+    {
+      "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
+      "type": 1,
+      "title": "Qual desses Países não é Europeu?",
+      "description": "Essa é para aquecer...",
+      "answer": 2,
+      "alternatives": ["Macedonia", "Espanha", "Casaquistão", "Polonia"]
+    },
+    {
+      "image": "https://res.cloudinary.com/dhmkfekt2/image/upload/v1633060616/a_vccpv5.gif",
+      "type": 1,
+      "title": "O Brasil é de que continente?",
+      "description": "Essa é para aquecer...",
+      "answer": 1,
+      "alternatives": [
+        "America do norte",
+        "America do sul",
+        "America central",
+        "Europa",
+        "Asia"
+      ]
+    }
+  ]
+}
