@@ -12,7 +12,49 @@ export function ExperienceProvider({ children, ...rest }) {
   // prettier-ignore
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
   const [titleUser, setTitleUser] = useState("Iniciante");
+  const [totalPointsStatsBar, setTotalPointsStatsBar] = useState(10);
+  const [pointsBarType, setPointsBarType] = useState({
+    totalTypeZero: 5,
+    totalTypeOne: 5,
+    totalTypeTwo: 5,
+    totalTypeTree: 5,
+  });
   const name = "William Mota";
+
+  let copy = Object.assign({}, pointsBarType);
+  function handlePointsStats(type) {
+    setTotalPointsStatsBar(totalPointsStatsBar + 1);
+    switch (type) {
+      case 0:
+        console.log(pointsBarType);
+        copy.totalTypeZero++;
+        setPointsBarType(copy);
+        console.log(copy);
+        break;
+      case 1:
+        copy.totalTypeOne++;
+        setPointsBarType(copy);
+        console.log(pointsBarType);
+        break;
+      case 2:
+        copy.totalTypeTwo++;
+        setPointsBarType(copy);
+        console.log(pointsBarType);
+        break;
+      case 3:
+        copy.totalTypeTree++;
+        setPointsBarType(copy);
+        console.log(pointsBarType);
+        break;
+
+      default:
+        break;
+    }
+  }
+
+  useEffect(() => {
+    console.log(pointsBarType);
+  }, [pointsBarType]);
 
   useEffect(() => {
     Cookies.set("level", String(level));
@@ -47,7 +89,6 @@ export function ExperienceProvider({ children, ...rest }) {
 
     setCurrentExperience(finalExperience);
   }
-  console.log(db.titulos[0]);
   return (
     <ExperienceContext.Provider
       value={{
@@ -59,6 +100,7 @@ export function ExperienceProvider({ children, ...rest }) {
         name,
         titleUser,
         handleTitles,
+        handlePointsStats,
       }}
     >
       {children}

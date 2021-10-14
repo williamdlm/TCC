@@ -5,7 +5,7 @@ import { MainComplete } from "../src/components/Main";
 import { ExperienceProvider } from "../src/contexts/ExperienceContext";
 
 export default function Home(props) {
-  console.log(props);
+  // console.log(props);
   return (
     <ExperienceProvider
       level={props.level}

@@ -65,8 +65,8 @@ function QuestionWidget({
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
   const { completeQuestion } = useContext(ExperienceContext);
-  // console.log(question);
-  console.log(selectedAlternative);
+  const { handlePointsStats } = useContext(ExperienceContext);
+  // console.log(question.type);
   return (
     <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>
@@ -98,7 +98,12 @@ function QuestionWidget({
             addResult(isCorrect);
             setTimeout(() => {
               {
-                isCorrect && completeQuestion(1);
+                {
+                  isCorrect && completeQuestion(1);
+                }
+                {
+                  isCorrect && handlePointsStats(question.type);
+                }
               }
               onSubmit();
               setSelectedAlternative(undefined);
