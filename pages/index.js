@@ -10,6 +10,11 @@ export default function Home(props) {
     <ExperienceProvider
       level={props.level}
       currentExperience={props.currentExperience}
+      totalRounds={props.totalRounds}
+      pointsBarTypeZero={props.pointsBarTypeZero}
+      pointsBarTypeOne={props.pointsBarTypeOne}
+      pointsBarTypeTwo={props.pointsBarTypeTwo}
+      pointsBarTypeTree={props.pointsBarTypeTree}
     >
       <Background>
         <Head>
@@ -23,11 +28,24 @@ export default function Home(props) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const { level, currentExperience } = ctx.req.cookies;
+  const {
+    level,
+    currentExperience,
+    totalRounds,
+    pointsBarTypeZero,
+    pointsBarTypeOne,
+    pointsBarTypeTwo,
+    pointsBarTypeTree,
+  } = ctx.req.cookies;
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
+      totalRounds: Number(totalRounds),
+      pointsBarTypeZero: Number(pointsBarTypeZero),
+      pointsBarTypeOne: Number(pointsBarTypeOne),
+      pointsBarTypeTwo: Number(pointsBarTypeTwo),
+      pointsBarTypeTree: Number(pointsBarTypeTree),
     },
   };
 };

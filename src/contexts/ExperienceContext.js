@@ -1,6 +1,7 @@
 import { createContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import db from "../../db.json";
+import { typeOf } from "react-is";
 
 export const ExperienceContext = createContext({});
 
@@ -12,39 +13,34 @@ export function ExperienceProvider({ children, ...rest }) {
   // prettier-ignore
   const experienceToNextLevel = Math.pow((level + 1) * 4, 2);
   const [titleUser, setTitleUser] = useState("Iniciante");
-  const [totalPointsStatsBar, setTotalPointsStatsBar] = useState(10);
-  const [pointsBarType, setPointsBarType] = useState({
-    totalTypeZero: 5,
-    totalTypeOne: 5,
-    totalTypeTwo: 5,
-    totalTypeTree: 5,
-  });
+  const [totalRounds, setTotalRounds] = useState(rest.totalRounds ?? 1);
+  const [pointsBarTypeZero, setPointsBarTypeZero] = useState(
+    rest.pointsBarTypeZero ?? 0
+  );
+  const [pointsBarTypeOne, setPointsBarTypeOne] = useState(
+    rest.pointsBarTypeOne ?? 0
+  );
+  const [pointsBarTypeTwo, setPointsBarTypeTwo] = useState(
+    rest.pointsBarTypeTwo ?? 0
+  );
+  const [pointsBarTypeTree, setPointsBarTypeTree] = useState(
+    rest.pointsBarTypeTree ?? 0
+  );
   const name = "William Mota";
 
-  let copy = Object.assign({}, pointsBarType);
   function handlePointsStats(type) {
-    setTotalPointsStatsBar(totalPointsStatsBar + 1);
     switch (type) {
       case 0:
-        console.log(pointsBarType);
-        copy.totalTypeZero++;
-        setPointsBarType(copy);
-        console.log(copy);
+        setPointsBarTypeZero(pointsBarTypeZero + 1);
         break;
       case 1:
-        copy.totalTypeOne++;
-        setPointsBarType(copy);
-        console.log(pointsBarType);
+        setPointsBarTypeOne(pointsBarTypeOne + 1);
         break;
       case 2:
-        copy.totalTypeTwo++;
-        setPointsBarType(copy);
-        console.log(pointsBarType);
+        setPointsBarTypeTwo(pointsBarTypeTwo + 1);
         break;
       case 3:
-        copy.totalTypeTree++;
-        setPointsBarType(copy);
-        console.log(pointsBarType);
+        setPointsBarTypeTree(pointsBarTypeTree + 1);
         break;
 
       default:
@@ -52,14 +48,28 @@ export function ExperienceProvider({ children, ...rest }) {
     }
   }
 
-  useEffect(() => {
-    console.log(pointsBarType);
-  }, [pointsBarType]);
-
+  // useEffect(() => {
+  //   console.log(totalRounds);
+  // }, [totalRounds]);
   useEffect(() => {
     Cookies.set("level", String(level));
     Cookies.set("currentExperience", String(currentExperience));
-  }, [level, currentExperience]);
+    Cookies.set("totalRounds", String(totalRounds));
+    Cookies.set("pointsBarTypeZero", pointsBarTypeZero);
+    Cookies.set("pointsBarTypeOne", pointsBarTypeOne);
+    Cookies.set("pointsBarTypeTwo", pointsBarTypeTwo);
+    Cookies.set("pointsBarTypeTree", pointsBarTypeTree);
+  }, [
+    level,
+    currentExperience,
+    totalRounds,
+    pointsBarTypeZero,
+    pointsBarTypeOne,
+    pointsBarTypeTwo,
+    pointsBarTypeTree,
+  ]);
+
+  // console.log(typeof Cookies.get("pointsBarType"));
 
   function handleTitles() {
     if (level >= 50) {
@@ -77,6 +87,10 @@ export function ExperienceProvider({ children, ...rest }) {
 
   function levelUp() {
     setLevel(level + 1);
+  }
+
+  function handleRounds() {
+    setTotalRounds(totalRounds + 1);
   }
   const amount = 50;
   // prettier-ignore
@@ -101,6 +115,12 @@ export function ExperienceProvider({ children, ...rest }) {
         titleUser,
         handleTitles,
         handlePointsStats,
+        totalRounds,
+        handleRounds,
+        pointsBarTypeZero,
+        pointsBarTypeOne,
+        pointsBarTypeTwo,
+        pointsBarTypeTree,
       }}
     >
       {children}

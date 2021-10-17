@@ -66,7 +66,11 @@ function QuestionWidget({
   const hasAlternativeSelected = selectedAlternative !== undefined;
   const { completeQuestion } = useContext(ExperienceContext);
   const { handlePointsStats } = useContext(ExperienceContext);
+  const { handleRounds } = useContext(ExperienceContext);
   // console.log(question.type);
+  React.useEffect(() => {
+    handleRounds();
+  }, []);
   return (
     <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>
@@ -101,6 +105,7 @@ function QuestionWidget({
                 {
                   isCorrect && completeQuestion(1);
                 }
+
                 {
                   isCorrect && handlePointsStats(question.type);
                 }
@@ -162,7 +167,8 @@ export default function QuizPage(props) {
   const [question, setQuestion] = React.useState(
     handleChangeQuestion(questionIndex)
   );
-  const totalQuestions = 5;
+
+  const totalQuestions = 2;
 
   function handleChangeQuestion(type) {
     const questionsForType = dbQuestions.questions.filter((question) => {
@@ -191,10 +197,16 @@ export default function QuizPage(props) {
       setScreenState(screenStates.RESULT);
     }
   }
+
   return (
     <ExperienceProvider
       level={props.level}
       currentExperience={props.currentExperience}
+      totalRounds={props.totalRounds}
+      pointsBarTypeZero={props.pointsBarTypeZero}
+      pointsBarTypeOne={props.pointsBarTypeOne}
+      pointsBarTypeTwo={props.pointsBarTypeTwo}
+      pointsBarTypeTree={props.pointsBarTypeTree}
     >
       <Background>
         <QuizContainer>
@@ -218,11 +230,24 @@ export default function QuizPage(props) {
 }
 
 export const getServerSideProps = async (ctx) => {
-  const { level, currentExperience } = ctx.req.cookies;
+  const {
+    level,
+    currentExperience,
+    totalRounds,
+    pointsBarTypeZero,
+    pointsBarTypeOne,
+    pointsBarTypeTwo,
+    pointsBarTypeTree,
+  } = ctx.req.cookies;
   return {
     props: {
       level: Number(level),
       currentExperience: Number(currentExperience),
+      totalRounds: Number(totalRounds),
+      pointsBarTypeZero: Number(pointsBarTypeZero),
+      pointsBarTypeOne: Number(pointsBarTypeOne),
+      pointsBarTypeTwo: Number(pointsBarTypeTwo),
+      pointsBarTypeTree: Number(pointsBarTypeTree),
     },
   };
 };

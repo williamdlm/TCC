@@ -3,6 +3,8 @@ import db from "../../../db.json";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import StatsBar from "../StatsBar";
+import { useContext } from "react";
+import { ExperienceContext } from "../../contexts/ExperienceContext";
 
 const Main = styled.div`
   justify-content: space-between;
@@ -133,6 +135,7 @@ Main.MiniCard = styled.div`
 
 export function MainComplete() {
   const router = useRouter();
+  const { handleRounds } = useContext(ExperienceContext);
   return (
     <Main>
       <Main.PlayerArea
@@ -149,6 +152,9 @@ export function MainComplete() {
           <Main.MiniCard
             onClick={() => {
               router.push(`/quiz`);
+              // {
+              //   handleRounds();
+              // }
             }}
           >
             <img

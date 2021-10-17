@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import db from "../../../db.json";
+import { ExperienceContext } from "../../contexts/ExperienceContext";
 const Container = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -24,6 +25,13 @@ const Desc = styled.label`
 `;
 
 export default function StatsBar() {
+  const {
+    totalRounds,
+    pointsBarTypeZero,
+    pointsBarTypeOne,
+    pointsBarTypeTwo,
+    pointsBarTypeTree,
+  } = React.useContext(ExperienceContext);
   return (
     <Container>
       <Bar>
@@ -32,7 +40,7 @@ export default function StatsBar() {
             backgroundColor: `${db.theme.colors.red}`,
             height: "100%",
             borderRadius: "50px",
-            width: "70%",
+            width: `${(pointsBarTypeZero / totalRounds) * 100}%`,
           }}
         />
         <Desc>Força</Desc>
@@ -43,7 +51,7 @@ export default function StatsBar() {
             backgroundColor: `${db.theme.colors.blue}`,
             height: "100%",
             borderRadius: "50px",
-            width: "25%",
+            width: `${(pointsBarTypeOne / totalRounds) * 100}%`,
           }}
         />
         <Desc>Magia</Desc>
@@ -54,7 +62,7 @@ export default function StatsBar() {
             backgroundColor: `${db.theme.colors.yellow}`,
             height: "100%",
             borderRadius: "50px",
-            width: "50%",
+            width: `${(pointsBarTypeTwo / totalRounds) * 100}%`,
           }}
         />
         <Desc>Percepção</Desc>
@@ -65,7 +73,7 @@ export default function StatsBar() {
             backgroundColor: `${db.theme.colors.green}`,
             height: "100%",
             borderRadius: "50px",
-            width: "78%",
+            width: `${(pointsBarTypeTree / totalRounds) * 100}%`,
           }}
         />
         <Desc>Agilidade</Desc>
