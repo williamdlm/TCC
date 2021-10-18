@@ -59,11 +59,10 @@ export default function Home(props) {
         ) : (
           <LogOnScreen />
         )} */}
-        {screenState === 0 ? (
+        {screenState !== 1 && (
           <Facebook handleStatusLogged={handleStatusLogged} />
-        ) : (
-          <LogOnScreen />
         )}
+        {screenState === 1 && <LogOnScreen />}
       </Background>
     </ExperienceProvider>
   );
