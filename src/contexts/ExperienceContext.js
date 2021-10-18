@@ -26,7 +26,12 @@ export function ExperienceProvider({ children, ...rest }) {
   const [pointsBarTypeTree, setPointsBarTypeTree] = useState(
     rest.pointsBarTypeTree ?? 0
   );
+  const [isLogged, setIsLogged] = useState(rest.isLogged ?? 0);
   const name = "William Mota";
+
+  console.log(rest.isLogged);
+
+  function handleIsLogged() {}
 
   function handlePointsStats(type) {
     switch (type) {
@@ -59,6 +64,7 @@ export function ExperienceProvider({ children, ...rest }) {
     Cookies.set("pointsBarTypeOne", pointsBarTypeOne);
     Cookies.set("pointsBarTypeTwo", pointsBarTypeTwo);
     Cookies.set("pointsBarTypeTree", pointsBarTypeTree);
+    Cookies.set("isLogged", isLogged);
   }, [
     level,
     currentExperience,
@@ -67,9 +73,14 @@ export function ExperienceProvider({ children, ...rest }) {
     pointsBarTypeOne,
     pointsBarTypeTwo,
     pointsBarTypeTree,
+    isLogged,
   ]);
 
   // console.log(typeof Cookies.get("pointsBarType"));
+
+  function handleIsLogged() {
+    setIsLogged(1);
+  }
 
   function handleTitles() {
     if (level >= 50) {
@@ -121,6 +132,8 @@ export function ExperienceProvider({ children, ...rest }) {
         pointsBarTypeOne,
         pointsBarTypeTwo,
         pointsBarTypeTree,
+        isLogged,
+        handleIsLogged,
       }}
     >
       {children}

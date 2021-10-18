@@ -168,7 +168,7 @@ export default function QuizPage(props) {
     handleChangeQuestion(questionIndex)
   );
 
-  const totalQuestions = 2;
+  const totalQuestions = 5;
 
   function handleChangeQuestion(type) {
     const questionsForType = dbQuestions.questions.filter((question) => {
