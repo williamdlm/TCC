@@ -8,6 +8,7 @@ import {
 } from "../src/contexts/ExperienceContext";
 import React, { useContext, useEffect } from "react";
 import GoogleLogIn from "../src/components/GoogleLogIn";
+import Facebook from "../src/components/Facebook";
 
 function LogOnScreen() {
   return (
@@ -53,8 +54,13 @@ export default function Home(props) {
             content="etEJ5pGxXGSqGyGM_OOMKO4UWHWrkJQ2TqDxRcR2iwY"
           />
         </Head>
-        {screenState === 0 ? (
+        {/* {screenState === 0 ? (
           <GoogleLogIn handleStatusLogged={handleStatusLogged} />
+        ) : (
+          <LogOnScreen />
+        )} */}
+        {screenState === 0 ? (
+          <Facebook handleStatusLogged={handleStatusLogged} />
         ) : (
           <LogOnScreen />
         )}

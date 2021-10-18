@@ -207,6 +207,7 @@ export default function QuizPage(props) {
       pointsBarTypeOne={props.pointsBarTypeOne}
       pointsBarTypeTwo={props.pointsBarTypeTwo}
       pointsBarTypeTree={props.pointsBarTypeTree}
+      isLogged={props.isLogged}
     >
       <Background>
         <QuizContainer>
@@ -238,6 +239,7 @@ export const getServerSideProps = async (ctx) => {
     pointsBarTypeOne,
     pointsBarTypeTwo,
     pointsBarTypeTree,
+    isLogged,
   } = ctx.req.cookies;
   return {
     props: {
@@ -248,6 +250,7 @@ export const getServerSideProps = async (ctx) => {
       pointsBarTypeOne: Number(pointsBarTypeOne),
       pointsBarTypeTwo: Number(pointsBarTypeTwo),
       pointsBarTypeTree: Number(pointsBarTypeTree),
+      isLogged: Number(isLogged),
     },
   };
 };
