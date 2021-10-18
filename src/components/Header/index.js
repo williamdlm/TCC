@@ -33,6 +33,7 @@ Header.StatsPicture = styled.div`
   height: 5rem;
   background-color: white;
   border-radius: 50%;
+  background-size: cover;
 
   @media screen and (max-width: 1100px) and (min-width: 950px) {
     transform: scale(0.85);
@@ -132,7 +133,15 @@ function HeaderComplete() {
         animate="show"
       >
         <Header.StatsPicture>
-          <img src={playerImage} style={{ maxWidth: "100%" }} />
+          <div
+            style={{
+              width: "100%",
+              height: "100%",
+              backgroundSize: "cover",
+              backgroundImage: `url("${playerImage}")`,
+            }}
+          ></div>
+          {/* <img src={playerImage} style={{ maxWidth: "100%" }} /> */}
         </Header.StatsPicture>
         <Header.StatsInfo>
           <p className="fullNamePlayer">{playerName}</p>

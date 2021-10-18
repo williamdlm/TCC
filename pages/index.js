@@ -46,6 +46,7 @@ export default function Home(props) {
       pointsBarTypeTree={props.pointsBarTypeTree}
       isLogged={props.isLogged}
       playerName={props.playerName}
+      playerImage={props.playerImage}
     >
       <Background>
         <Head>
@@ -80,6 +81,7 @@ export const getServerSideProps = async (ctx) => {
     pointsBarTypeTree,
     isLogged,
     playerName,
+    playerImage,
   } = ctx.req.cookies;
   return {
     props: {
@@ -92,6 +94,7 @@ export const getServerSideProps = async (ctx) => {
       pointsBarTypeTree: Number(pointsBarTypeTree),
       isLogged: Number(isLogged),
       playerName: String(playerName),
+      playerImage: String(playerImage),
     },
   };
 };
