@@ -61,13 +61,23 @@ export default function Facebook({ handleStatusLogged }) {
           callback={responseFacebook}
         />
       )} */}
-      <FacebookLogin
-        appId="632902014369254"
-        // autoLoad={true}
-        fields="name,email,picture"
-        onClick={componentClicked}
-        callback={responseFacebook}
-      />
+      <div
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          marginTop: "50vh",
+        }}
+      >
+        <FacebookLogin
+          appId="632902014369254"
+          // autoLoad={true}
+          fields="name,email,picture"
+          onClick={componentClicked}
+          callback={responseFacebook}
+        />
+      </div>
     </>
   );
 }
