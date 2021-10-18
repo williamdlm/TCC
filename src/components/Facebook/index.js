@@ -3,7 +3,7 @@ import FacebookLogin from "react-facebook-login";
 import { ExperienceContext } from "../../contexts/ExperienceContext";
 
 export default function Facebook({ handleStatusLogged }) {
-  const { handleIsLogged } = useContext(ExperienceContext);
+  const { handleIsLogged, changePlayerName } = useContext(ExperienceContext);
   const changeStatus = () => {
     handleStatusLogged(1);
   };
@@ -29,6 +29,7 @@ export default function Facebook({ handleStatusLogged }) {
     });
     handleIsLogged();
     changeStatus();
+    changePlayerName(response.name);
   };
 
   const componentClicked = () => console.log("clicked");

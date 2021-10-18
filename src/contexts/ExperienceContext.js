@@ -27,11 +27,16 @@ export function ExperienceProvider({ children, ...rest }) {
     rest.pointsBarTypeTree ?? 0
   );
   const [isLogged, setIsLogged] = useState(rest.isLogged ?? 0);
-  const name = "William Mota";
+  const [playerName, setPlayerName] = useState(rest.playerName ?? "No Name");
+  const [playerImage, setPlayerImage] = useState(
+    "https://st2.depositphotos.com/1009634/7235/v/950/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg"
+  );
 
   console.log(rest.isLogged);
 
-  function handleIsLogged() {}
+  function changePlayerName(name) {
+    setPlayerName(name);
+  }
 
   function handlePointsStats(type) {
     switch (type) {
@@ -65,6 +70,7 @@ export function ExperienceProvider({ children, ...rest }) {
     Cookies.set("pointsBarTypeTwo", pointsBarTypeTwo);
     Cookies.set("pointsBarTypeTree", pointsBarTypeTree);
     Cookies.set("isLogged", isLogged);
+    Cookies.set("playerName", playerName);
   }, [
     level,
     currentExperience,
@@ -74,6 +80,7 @@ export function ExperienceProvider({ children, ...rest }) {
     pointsBarTypeTwo,
     pointsBarTypeTree,
     isLogged,
+    playerName,
   ]);
 
   // console.log(typeof Cookies.get("pointsBarType"));
@@ -122,7 +129,7 @@ export function ExperienceProvider({ children, ...rest }) {
         completeQuestion,
         levelUp,
         experienceToNextLevel,
-        name,
+        playerName,
         titleUser,
         handleTitles,
         handlePointsStats,
@@ -134,6 +141,8 @@ export function ExperienceProvider({ children, ...rest }) {
         pointsBarTypeTree,
         isLogged,
         handleIsLogged,
+        changePlayerName,
+        playerImage,
       }}
     >
       {children}

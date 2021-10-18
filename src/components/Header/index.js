@@ -28,6 +28,7 @@ Header.Stats = styled.div`
 `;
 
 Header.StatsPicture = styled.div`
+  overflow: hidden;
   width: 5rem;
   height: 5rem;
   background-color: white;
@@ -111,9 +112,10 @@ function HeaderComplete() {
     experienceToNextLevel,
     titleUser,
     handleTitles,
-    name,
+    playerName,
+    playerImage,
   } = useContext(ExperienceContext);
-  const namePart = name.split(" ");
+  const namePart = playerName.split(" ");
   useEffect(() => {
     handleTitles();
   }, []);
@@ -129,10 +131,12 @@ function HeaderComplete() {
         initial="hidden"
         animate="show"
       >
-        <Header.StatsPicture />
+        <Header.StatsPicture>
+          <img src={playerImage} style={{ maxWidth: "100%" }} />
+        </Header.StatsPicture>
         <Header.StatsInfo>
-          <p className="fullNamePlayer">William Mota</p>
-          <p className="firstNamePlayer">William</p>
+          <p className="fullNamePlayer">{playerName}</p>
+          <p className="firstNamePlayer">{namePart[0]}</p>
           <p className="levelPlayer">{`Level ${level}`}</p>
           <p className="experiencePlayer">{`xp ${currentExperience}`}</p>
         </Header.StatsInfo>
