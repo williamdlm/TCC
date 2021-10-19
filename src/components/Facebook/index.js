@@ -34,8 +34,6 @@ export default function Facebook({ handleStatusLogged }) {
     changePlayerName(response.name);
   };
 
-  const componentClicked = () => console.log("clicked");
-
   const FbContent = (
     <div
       style={{
@@ -53,17 +51,6 @@ export default function Facebook({ handleStatusLogged }) {
 
   return (
     <>
-      {/* {state.isLoggedIn ? (
-        <FbContent />
-      ) : (
-        <FacebookLogin
-          appId="632902014369254"
-          //autoLoad={true}
-          fields="name,email,picture"
-          onClick={componentClicked}
-          callback={responseFacebook}
-        />
-      )} */}
       <div
         style={{
           width: "100%",
@@ -74,10 +61,9 @@ export default function Facebook({ handleStatusLogged }) {
         }}
       >
         <FacebookLogin
-          appId="632902014369254"
+          appId="283520543647320"
           // autoLoad={true}
           fields="name,email,picture"
-          onClick={componentClicked}
           callback={responseFacebook}
         />
       </div>

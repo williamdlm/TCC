@@ -133,9 +133,10 @@ Main.MiniCard = styled.div`
   }
 `;
 
-export function MainComplete() {
+export function MainComplete({ handleModal }) {
   const router = useRouter();
-  const { handleRounds } = useContext(ExperienceContext);
+  const handleModalMain = () => handleModal(1);
+
   return (
     <Main>
       <Main.PlayerArea
@@ -163,7 +164,7 @@ export function MainComplete() {
             />
             <p>Classico</p>
           </Main.MiniCard>
-          <Main.MiniCard>
+          <Main.MiniCard onClick={() => handleModalMain()}>
             <img
               className="icon"
               src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/scroll_jbw9wv.png"

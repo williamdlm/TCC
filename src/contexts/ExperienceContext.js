@@ -1,7 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import Cookies from "js-cookie";
 import db from "../../db.json";
-import { typeOf } from "react-is";
 
 export const ExperienceContext = createContext({});
 
@@ -33,7 +32,7 @@ export function ExperienceProvider({ children, ...rest }) {
       "https://st2.depositphotos.com/1009634/7235/v/950/depositphotos_72350117-stock-illustration-no-user-profile-picture-hand.jpg"
   );
 
-  console.log(rest.isLogged);
+  console.log(`Status: ${rest.isLogged ? "Logado" : "Não Logado"} `);
 
   function changePlayerImage(url) {
     setPlayerImage(url);
@@ -63,9 +62,6 @@ export function ExperienceProvider({ children, ...rest }) {
     }
   }
 
-  // useEffect(() => {
-  //   console.log(totalRounds);
-  // }, [totalRounds]);
   useEffect(() => {
     Cookies.set("level", String(level));
     Cookies.set("currentExperience", String(currentExperience));
@@ -89,8 +85,6 @@ export function ExperienceProvider({ children, ...rest }) {
     playerName,
     playerImage,
   ]);
-
-  // console.log(typeof Cookies.get("pointsBarType"));
 
   function handleIsLogged() {
     setIsLogged(1);

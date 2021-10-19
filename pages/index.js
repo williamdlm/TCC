@@ -6,35 +6,29 @@ import {
   ExperienceContext,
   ExperienceProvider,
 } from "../src/contexts/ExperienceContext";
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import GoogleLogIn from "../src/components/GoogleLogIn";
 import Facebook from "../src/components/Facebook";
-
-function LogOnScreen() {
-  return (
-    <>
-      <Header />
-      <MainComplete />
-    </>
-  );
-}
+import ModalComplete from "../src/components/Modal";
 
 export default function Home(props) {
-  const { isLogged } = useContext(ExperienceContext);
-  console.log(props);
-
   const [screenState, setScreenState] = React.useState(props.isLogged);
+  const [isModalVisible, setIsModalVisible] = React.useState(false);
+
+  function handleModal(param) {
+    if (param === 0) {
+      setIsModalVisible(false);
+    } else {
+      setIsModalVisible(true);
+    }
+  }
 
   function handleStatusLogged(event) {
     console.log("event " + event);
     setScreenState(event);
   }
   useEffect(() => {}, []);
-  useEffect(() => {
-    //if (props.isLogged == 1) {
-    //setScreenState(1);
-    //  }
-  }, [screenState]);
+  useEffect(() => {}, [screenState]);
   return (
     <ExperienceProvider
       level={props.level}
@@ -56,6 +50,7 @@ export default function Home(props) {
             content="etEJ5pGxXGSqGyGM_OOMKO4UWHWrkJQ2TqDxRcR2iwY"
           />
         </Head>
+        {isModalVisible && <ModalComplete />}
         {/* {screenState === 0 ? (
           <GoogleLogIn handleStatusLogged={handleStatusLogged} />
         ) : (
@@ -64,7 +59,12 @@ export default function Home(props) {
         {screenState !== 1 && (
           <Facebook handleStatusLogged={handleStatusLogged} />
         )}
-        {screenState === 1 && <LogOnScreen />}
+        {screenState === 1 && (
+          <>
+            <Header />
+            <MainComplete handleModal={handleModal} />
+          </>
+        )}
       </Background>
     </ExperienceProvider>
   );
