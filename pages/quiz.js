@@ -31,13 +31,31 @@ function ResultWidget({ results }) {
           ))}
         </ul>
       </Widget.Content>
-      <Button
-        onClick={() => {
-          router.push(`/`);
+      <div
+        style={{
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "center",
+          width: "100%",
         }}
       >
-        Voltar para inicio
-      </Button>
+        <Button
+          style={{ marginBottom: "0.5rem", width: "80%" }}
+          onClick={() => {
+            window.location.reload();
+          }}
+        >
+          Continuar
+        </Button>
+        <Button
+          style={{ marginBottom: "0.5rem", width: "80%" }}
+          onClick={() => {
+            router.push(`/`);
+          }}
+        >
+          Voltar para inicio
+        </Button>
+      </div>
     </Widget>
   );
 }

@@ -153,9 +153,6 @@ export function MainComplete({ handleModal }) {
           <Main.MiniCard
             onClick={() => {
               router.push(`/quiz`);
-              // {
-              //   handleRounds();
-              // }
             }}
           >
             <img
