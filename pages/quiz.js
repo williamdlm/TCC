@@ -8,6 +8,9 @@ import Button from "../src/components/Button";
 import AlternativesForm from "../src/components/AlternativeForms";
 import BackLinkArrow from "../src/components/BackLinkArrow";
 import { useRouter } from "next/router";
+import { Lottie } from "@crello/react-lottie";
+import loadingAnimation from "./animations/loading.json";
+
 import {
   ExperienceContext,
   ExperienceProvider,
@@ -64,7 +67,30 @@ function LoadingWidget() {
   return (
     <Widget>
       <Widget.Header>Carregando...</Widget.Header>
-      <Widget.Content>[Desafio do Loading]</Widget.Content>
+      <Widget.Content style={{ height: "20rem" }}>
+        <div
+          style={{
+            overflow: "hidden",
+            width: "100%",
+            height: "100%",
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <Lottie
+            margin="0"
+            width="20rem"
+            height="20rem"
+            className="lottie-container basic"
+            config={{
+              animationData: loadingAnimation,
+              loop: true,
+              autoplay: true,
+            }}
+          />
+        </div>
+      </Widget.Content>
     </Widget>
   );
 }
@@ -230,7 +256,7 @@ export default function QuizPage(props) {
       playerImage={props.playerImage}
     >
       <Background>
-        <QuizContainer>
+        <QuizContainer style={{ justifyContent: "center" }}>
           {screenState === screenStates.QUIZ && (
             <QuestionWidget
               question={question}
