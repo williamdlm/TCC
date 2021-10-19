@@ -50,7 +50,7 @@ export default function Home(props) {
             content="etEJ5pGxXGSqGyGM_OOMKO4UWHWrkJQ2TqDxRcR2iwY"
           />
         </Head>
-        {isModalVisible && <ModalComplete />}
+        {isModalVisible && <ModalComplete handleModal={handleModal} />}
         {/* {screenState === 0 ? (
           <GoogleLogIn handleStatusLogged={handleStatusLogged} />
         ) : (

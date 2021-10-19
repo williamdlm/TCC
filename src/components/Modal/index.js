@@ -24,11 +24,19 @@ const Modal = styled.div`
   color: black;
   padding: 3rem 1rem;
   flex-wrap: wrap;
+  border-radius: 5%;
 `;
 
-export default function ModalComplete() {
+export default function ModalComplete({ handleModal }) {
+  const handleModalModal = () => handleModal(0);
+  const handleOutSideClick = (event) => {
+    console.log(event);
+    if (event === "modal") {
+      handleModalModal();
+    }
+  };
   return (
-    <ContainerModal>
+    <ContainerModal id="modal" onClick={(e) => handleOutSideClick(e.target.id)}>
       <Modal>
         <div>
           <h1>Titulo</h1>
@@ -40,11 +48,12 @@ export default function ModalComplete() {
         </div>
         <Button
           style={{
-            backgroundColor: `${db.theme.colors.blue}`,
+            backgroundColor: `${db.theme.colors.red}`,
             alignSelf: "flex-end",
           }}
+          onClick={() => handleModalModal()}
         >
-          Continuar
+          FECHAR
         </Button>
       </Modal>
     </ContainerModal>

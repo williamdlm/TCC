@@ -61,7 +61,7 @@ export default function Facebook({ handleStatusLogged }) {
         }}
       >
         <FacebookLogin
-          appId="283520543647320"
+          appId="632902014369254"
           // autoLoad={true}
           fields="name,email,picture"
           callback={responseFacebook}
