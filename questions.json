@@ -23,6 +23,72 @@
       "alternatives": ["França", "Inglaterra", "Brasil", "Austrália", "Itália"]
     },
     {
+      "image": "https://c.tenor.com/rp2Qg5U01ngAAAAM/death-skelly.gif",
+      "type": 0,
+      "title": "É considerado o primeiro filósofo ocidental:",
+      "description": "'Penso logo existo' -René Descartes.",
+      "answer": 0,
+      "alternatives": ["Tales de mileto", "Sócrates", "Platão", "Sigmund Freud"]
+    },
+    {
+      "image": "https://c.tenor.com/y-tI4b72t2wAAAAM/surreal-philosophers.gif",
+      "type": 0,
+      "title": "São considerados os mais importantes filósofos gregos do período helênico:",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "Socrates,Platão,Aristóteles",
+        "Heráclito,Arquimedes e Protágoras"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/QLbV11ltA8cAAAAM/smart-thinking.gif",
+      "type": 0,
+      "title": "'Deus está morto' é a célebre frase do filósofo alemão:",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "Witingestein",
+        "Nietzsche",
+        "Gutenberg",
+        "Carl Friedrich Gauss"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/-hAHqu0UrcEAAAAM/kant-immanuel-kant.gif",
+      "type": 0,
+      "title": "É considerado o filósofo precursor da corrente filosófica conhecida como existencialismo:",
+      "description": "",
+      "answer": 2,
+      "alternatives": ["Witingestein", "Nietzsche", "Kierkegaard", "David Hume"]
+    },
+    {
+      "image": "https://c.tenor.com/dEurReEy0zUAAAAM/sponge-bob-patrick-star.gif",
+      "type": 0,
+      "title": "É considerado o pai da psicanálise, teoria que postula que as motivações humanas possuem sua origem num aspecto da mente chamado de inconsciente, intimamente relacionado com experiências da infância:",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Carl Gustav Jung",
+        "Nikola tesla",
+        "Albert Einstein",
+        "Sigmund Freud"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/i2rV3SykLQAAAAAM/hora-da-filosofia-hora-do-fil%C3%B3sofo.gif",
+      "type": 0,
+      "title": "São considerados os mais importantes expoentes do existencialismo do século XX:",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "Heidegger e Sartre",
+        "Richard Dawkins e Stephen Howkings",
+        "Robert Downey Jr. e Will Smith",
+        "Faustão e Luciano Hulk"
+      ]
+    },
+    {
       "image": "https://i.giphy.com/media/l3nWhI38IWDofyDrW/giphy.webp",
       "type": 0,
       "title": "Qual o nome do presidente do Brasil que ficou conhecido como Jango?",
@@ -69,6 +135,76 @@
         "America central",
         "Europa",
         "Asia"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/1e_JU4OKpW0AAAAM/tv3-no-pot-ser-tv3.gif",
+      "type": 1,
+      "title": " Está intimamente relacionado à determinação do sexo e à herança genética:",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "cromoplastos",
+        "coenzimae",
+        "cromossomo",
+        "cloroplasto",
+        "centríolo"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/SgQSyDGMAkYAAAAM/dna-spinning.gif",
+      "type": 1,
+      "title": "A sigla DNA, em português, significa",
+      "description": "",
+      "answer": 4,
+      "alternatives": [
+        "ácido desintoxicante",
+        "ácido desinflamante",
+        "ácido deflagrante",
+        "ácido desoxinexorável",
+        "ácido desoxirribonucleico"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/bJDy8Gi_zxgAAAAM/bichinhos-o-show-da-luna.gif",
+      "type": 1,
+      "title": "Bactérias são micro-organismos unicelulares pertencentes ao...",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "Reino protista",
+        "Reino animal",
+        "Reino Monera",
+        "Reino dos Fungos",
+        "Reino dos Céus"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/IrIItfk0NLAAAAAM/student-stude.gif",
+      "type": 1,
+      "title": "Autótrofos são os seres vivos que.",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "auxiliam na fabricação de automóveis",
+        "possuem autonomia para andar",
+        "Realizam suas tarefas de forma automática",
+        "São capazes de produzir seu próprio alimento",
+        "Se alimentam de outros seres da mesma espécie"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/n0G8l2ajC2IAAAAM/red-blood.gif",
+      "type": 1,
+      "title": "Autofagia é o processo de...",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "autodestruição da célula",
+        "criação de veículos autônomos",
+        "realização da fotossíntese",
+        "alimentação de animais autossuficientes",
+        "respiração das plantas"
       ]
     },
     {
@@ -122,8 +258,155 @@
       ]
     },
     {
-      "image": "https://i.giphy.com/media/k8mfzfxm6WpqHFBg6o/giphy.webp",
+      "image": "https://c.tenor.com/jncM2BNxpqQAAAAM/do-you-speaka-any-english-speaka.gif",
+      "type": 2,
+      "title": "Qual o plural de THIS?",
+      "description": "",
+      "answer": 0,
+      "alternatives": ["These", "That", "Three", "Those"]
+    },
+
+    {
+      "image": "https://c.tenor.com/zzlpt5MAsYQAAAAj/inglish-claustrodeig.gif",
+      "type": 2,
+      "title": "Qual é o singular do THOSE?",
+      "description": "",
+      "answer": 3,
+      "alternatives": ["The", "These", "Thath", "That"]
+    },
+
+    {
+      "image": "https://c.tenor.com/rweh-xPsyqMAAAAM/vaheed.gif",
+      "type": 2,
+      "title": "Qual o significado desses nomes: Tiger, Fish, Guinea pig e Cat",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "Onça,Peixe,Porco e gato",
+        "Tigre, Peixe, Coelho",
+        "Tigre,Pássaro,Porquinho da Índia e Cachorro",
+        "Tigre,Peixe,Porquinho da Índia e gato"
+      ]
+    },
+
+    {
+      "image": "https://tenor.com/search/winnie-the-pooh-gifs",
+      "type": 2,
+      "title": "Como se escreve inverno em inglês?",
+      "description": "",
+      "answer": 2,
+      "alternatives": ["Wonder", "Windy", "Winter", "Wardrobe"]
+    },
+    {
+      "image": "https://c.tenor.com/ppik_ERYDT4AAAAM/the-simpsons-im-scared.gif",
+      "type": 2,
+      "title": "Qual das respostas abaixo NÃO é um clima *weather*?",
+      "description": "",
+      "answer": 3,
+      "alternatives": ["Cloudy", "Sunny", "Rainy", "Spring"]
+    },
+    {
+      "image": "https://c.tenor.com/VgL4RHIg7WcAAAAM/cats-cuddle.gif",
+      "type": 2,
+      "title": "Qual o significado desses nomes: Rabbit,Bird,Frog,Bear e Snake",
+      "description": "",
+      "answer": 0,
+      "alternatives": [
+        "Coelho,Pássaro,Sapo,Urso e Cobra",
+        "Rato,Foca,Caranguejo,Urso e Coelho",
+        "Cobra,Rato,Lagarto,Mariposa e Borboleta"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/zGsHkCoRb_UAAAAj/animated-sticker-emoticon.gif",
       "type": 3,
+      "title": "A unidade 'grama' serve para medir:",
+      "description": "",
+      "answer": 4,
+      "alternatives": [
+        "volume",
+        "comprimento",
+        "capacidade",
+        "superfície",
+        "massa"
+      ]
+    },
+
+    {
+      "image": "https://c.tenor.com/w4kKSRqtsIcAAAAM/im-lost-formula.gif",
+      "type": 3,
+      "title": "Em matemática, chamamos de 'fator' um...",
+      "description": "",
+      "answer": 3,
+      "alternatives": [
+        "número que é somado a outro",
+        "número ou elemento submetido à operação de multiplicação",
+        "valor usado como denominador de uma fração",
+        "número inteiro maior que zero",
+        "número negativo qualquer"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/JClYgIeoh4EAAAAj/carol-lima-caroline-lima.gif",
+      "type": 3,
+      "title": "Uma inequação é uma...",
+      "description": "",
+      "answer": 1,
+      "alternatives": [
+        "inserção de uma equação dentro de outra",
+        "desigualdade entre duas expressões matemáticas",
+        "igualdade entre duas expressões numéricas",
+        "equação que não possui letras",
+        "equação que possui alguma variável"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/CowGNQSUsOYAAAAM/confused-math.gif",
+      "type": 3,
+      "title": "Hectare é uma unidade de área que equivale a..",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "100 metros quadrados",
+        "1.000 metros quadrados",
+        "10.000 metros quadrados",
+        "5.000 metros quadrados",
+        "5 metros quadrados"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/RnJgKXhXgVUAAAAM/forgot-i-forgot.gif",
+      "type": 3,
+      "title": "Em Matemática, a palavra 'avos' é usada para:",
+      "description": "",
+      "answer": 2,
+      "alternatives": [
+        "nomear os números mais antigos",
+        "nomear os números maiores que os primos",
+        "nomear frações de denominadores maiores que 10, mas diferentes de 100, 1000, etc.",
+        "nomear os números romanos",
+        "ensinar cálculos aos netos"
+      ]
+    },
+    {
+      "image": "https://c.tenor.com/4ho5rKl9UtYAAAAd/dog-doggo.gif",
+      "type": 3,
+      "title": "A massa de um objeto é a propriedade que indica o quanto ele é...",
+      "description": "",
+      "answer": 2,
+      "alternatives": ["bacana", "volumoso", "pesado", "resistente", "pequeno"]
+    },
+    {
+      "image": "https://c.tenor.com/JClYgIeoh4EAAAAj/carol-lima-caroline-lima.gif",
+      "type": 3,
+      "title": "A unidade 'litro' serve para medir:",
+      "description": "",
+      "answer": 4,
+      "alternatives": ["volume", "massa", "comprimento", "capacidade", "tempo"]
+    },
+    {
+      "image": "https://i.giphy.com/media/k8mfzfxm6WpqHFBg6o/giphy.webp",
+      "type": 4,
       "title": "No rugby, ou futebol americano, qual é o formato da bola usada durante o jogo?",
       "description": "Mostre seu entendimento sobre esportes.",
       "answer": 1,
@@ -137,7 +420,7 @@
     },
     {
       "image": "https://i.giphy.com/media/oQt5YnUZmXq02ad84u/giphy.webp",
-      "type": 3,
+      "type": 4,
       "title": "No vôlei, o que acontece quando a bola que um jogador tocou bate na rede?",
       "description": "",
       "answer": 3,

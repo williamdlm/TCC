@@ -155,15 +155,19 @@ function QuestionWidget({
                 }
               }
               onSubmit();
+              {
+                console.log(question);
+              }
               setSelectedAlternative(undefined);
               setIsQuestionSubmited(false);
-            }, 1 * 2000);
+            }, 1 * 3000);
           }}
         >
           {question.alternatives.map((alternative, alternativeIndex) => {
             const alternativeId = `alternative__${alternativeIndex}`;
             const alternativeStatus = isCorrect ? "SUCCESS" : "ERROR";
             const isSelect = selectedAlternative === alternativeIndex;
+            const alternativeCorrect = alternativeIndex === question.answer;
             return (
               <Widget.Topic
                 as="label"
@@ -171,6 +175,7 @@ function QuestionWidget({
                 key={alternativeId}
                 data-selected={isSelect}
                 data-status={isQuestionSubmited && alternativeStatus}
+                data-correct={alternativeCorrect}
               >
                 <input
                   style={{
