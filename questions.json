@@ -401,7 +401,7 @@
       "type": 3,
       "title": "A unidade 'litro' serve para medir:",
       "description": "",
-      "answer": 4,
+      "answer": 3,
       "alternatives": ["volume", "massa", "comprimento", "capacidade", "tempo"]
     },
     {

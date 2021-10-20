@@ -119,6 +119,10 @@ Main.MiniCard = styled.div`
     transform: scale(1.5);
     box-shadow: inset 0px 0px 5px rgba(255, 255, 255, 0.3);
   }
+  .disabled {
+    pointer-events: none;
+    opacity: 0.2;
+  }
 
   p {
     text-align: center;
@@ -172,13 +176,13 @@ export function MainComplete({ handleModal }) {
         <Main.BlockMiniCard>
           <Main.MiniCard>
             <img
-              className="icon"
+              className="icon disabled"
               src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/lock_l5sw35.png"
             />
           </Main.MiniCard>
           <Main.MiniCard>
             <img
-              className="icon"
+              className="icon disabled"
               src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1633054930/lock_l5sw35.png"
             />
           </Main.MiniCard>
