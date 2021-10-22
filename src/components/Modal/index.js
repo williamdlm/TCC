@@ -18,13 +18,18 @@ const Modal = styled.div`
   /* position: absolute; */
   text-align: center;
   display: flex;
-  width: 15rem;
+  width: 18rem;
   height: 20rem;
   background-color: ${db.theme.colors.yellow};
   color: black;
-  padding: 3rem 1rem;
+  padding: 1rem 1rem 2rem 1rem;
   flex-wrap: wrap;
   border-radius: 5%;
+
+  p {
+    font-size: 0.85rem;
+    /* text-align: justify; */
+  }
 `;
 
 export default function ModalComplete({ handleModal }) {
@@ -39,11 +44,15 @@ export default function ModalComplete({ handleModal }) {
     <ContainerModal id="modal" onClick={(e) => handleOutSideClick(e.target.id)}>
       <Modal>
         <div>
-          <h1>Titulo</h1>
+          <h1>Sobre</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            pulvinar sem augue, quis convallis odio ornare vel. Cras fringilla
-            lorem.
+            Seja bem vindo nessa jornada de conhecimento!
+            <br /> Para inciar à aventura basta clicar no modo de jogo classico
+            e encarar as questões que irão surgir.
+          </p>
+          <p>
+            Este aplicativo foi desenvolvido para o trabalho de conclusão de
+            curso da UniFBV, espero que gostem.
           </p>
         </div>
         <Button
