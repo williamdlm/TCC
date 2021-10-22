@@ -34,39 +34,12 @@ export default function Facebook({ handleStatusLogged }) {
     changePlayerName(response.name);
   };
 
-  const FbContent = (
-    <div
-      style={{
-        width: "400px",
-        margin: "auto",
-        background: "#f4f4f4",
-        padding: "20px",
-      }}
-    >
-      <img src={state.picture} alt={state.name} />
-      <h2>Welcome {state.name}</h2>
-      Email: {state.email}
-    </div>
-  );
-
   return (
-    <>
-      <div
-        style={{
-          width: "100%",
-          height: "100%",
-          display: "flex",
-          justifyContent: "center",
-          marginTop: "50vh",
-        }}
-      >
-        <FacebookLogin
-          appId="632902014369254"
-          // autoLoad={true}
-          fields="name,email,picture"
-          callback={responseFacebook}
-        />
-      </div>
-    </>
+    <FacebookLogin
+      appId="632902014369254"
+      // autoLoad={true}
+      fields="name,email,picture"
+      callback={responseFacebook}
+    />
   );
 }

@@ -19,8 +19,6 @@ import {
 function ResultWidget({ results }) {
   const router = useRouter();
 
-  // setCurrentExperience(amountExp);
-  // console.log(`AmountExp: ${amountExp}`);
   return (
     <Widget style={{ margin: "0 auto" }}>
       <Widget.Header>RESULTADO</Widget.Header>
@@ -112,7 +110,6 @@ function QuestionWidget({
   const { completeQuestion } = useContext(ExperienceContext);
   const { handlePointsStats } = useContext(ExperienceContext);
   const { handleRounds } = useContext(ExperienceContext);
-  // console.log(question.type);
   React.useEffect(() => {
     handleRounds();
   }, []);
@@ -144,9 +141,6 @@ function QuestionWidget({
           onSubmit={(event) => {
             event.preventDefault();
             setIsClicked(false);
-            {
-              console.log(event.type);
-            }
             setIsQuestionSubmited(true);
             addResult(isCorrect);
             setTimeout(() => {

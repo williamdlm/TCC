@@ -10,6 +10,7 @@ import React, { useContext, useEffect, useState } from "react";
 import GoogleLogIn from "../src/components/GoogleLogIn";
 import Facebook from "../src/components/Facebook";
 import ModalComplete from "../src/components/Modal";
+import { ContainerLogin } from "../src/components/ContainerLogin";
 
 export default function Home(props) {
   const [screenState, setScreenState] = React.useState(props.isLogged);
@@ -57,10 +58,10 @@ export default function Home(props) {
           <LogOnScreen />
         )} */}
         {screenState !== 1 && (
-          <>
+          <ContainerLogin>
             <GoogleLogIn handleStatusLogged={handleStatusLogged} />
             <Facebook handleStatusLogged={handleStatusLogged} />
-          </>
+          </ContainerLogin>
         )}
         {screenState === 1 && (
           <>
