@@ -1,6 +1,6 @@
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import db from "../db.json";
-import { ExperienceProvider } from "../src/contexts/ExperienceContext";
+import Head from "next/head";
 
 const GlobalStyle = createGlobalStyle`
    /* @import url('https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap');
@@ -36,6 +36,17 @@ export default function App({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme}>
       <GlobalStyle />
+      <Head>
+        <title>QUIZZARD</title>
+        <meta
+          name="google-site-verification"
+          content="etEJ5pGxXGSqGyGM_OOMKO4UWHWrkJQ2TqDxRcR2iwY"
+        />
+        <link
+          rel="shortcut icon"
+          href="https://res.cloudinary.com/dhmkfekt2/image/upload/v1634872293/050-fairytale_jhafzp.ico"
+        ></link>
+      </Head>
       <Component {...pageProps} />
     </ThemeProvider>
   );

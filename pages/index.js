@@ -44,13 +44,6 @@ export default function Home(props) {
       playerImage={props.playerImage}
     >
       <Background>
-        <Head>
-          <title>TCC</title>
-          <meta
-            name="google-site-verification"
-            content="etEJ5pGxXGSqGyGM_OOMKO4UWHWrkJQ2TqDxRcR2iwY"
-          />
-        </Head>
         {isModalVisible && <ModalComplete handleModal={handleModal} />}
         {/* {screenState === 0 ? (
           <GoogleLogIn handleStatusLogged={handleStatusLogged} />
