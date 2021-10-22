@@ -57,7 +57,10 @@ export default function Home(props) {
           <LogOnScreen />
         )} */}
         {screenState !== 1 && (
-          <Facebook handleStatusLogged={handleStatusLogged} />
+          <>
+            <GoogleLogIn handleStatusLogged={handleStatusLogged} />
+            <Facebook handleStatusLogged={handleStatusLogged} />
+          </>
         )}
         {screenState === 1 && (
           <>

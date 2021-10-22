@@ -21,22 +21,22 @@ export default function GoogleLogIn({ handleStatusLogged }) {
     console.log(response);
   };
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        display: "flex",
-        justifyContent: "center",
-        marginTop: "50vh",
-      }}
-    >
-      <GoogleLogin
-        clientId="279991950987-fa92c6k1lffqtegplfqd9r1p8dos5kn6.apps.googleusercontent.com"
-        buttonText="Login"
-        onSuccess={responseGoogleSucess}
-        onFailed={responseGoogleFailed}
-        cookiePolicy={"single_host_origin"}
-      />
-    </div>
+    // <div
+    //   style={{
+    //     width: "100%",
+    //     height: "100%",
+    //     display: "flex",
+    //     justifyContent: "center",
+    //     marginTop: "50vh",
+    //   }}
+    // >
+    <GoogleLogin
+      clientId="279991950987-fa92c6k1lffqtegplfqd9r1p8dos5kn6.apps.googleusercontent.com"
+      buttonText="Login"
+      onSuccess={responseGoogleSucess}
+      onFailed={responseGoogleFailed}
+      cookiePolicy={"single_host_origin"}
+    />
+    // </div>
   );
 }
