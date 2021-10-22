@@ -106,6 +106,7 @@ function QuestionWidget({
     React.useState(undefined);
   const [isQuestionSubmited, setIsQuestionSubmited] = React.useState(false);
   const questId = `question__${questionIndex}`;
+  const [isClicked, setIsClicked] = React.useState(true);
   const isCorrect = selectedAlternative === question.answer;
   const hasAlternativeSelected = selectedAlternative !== undefined;
   const { completeQuestion } = useContext(ExperienceContext);
@@ -142,6 +143,10 @@ function QuestionWidget({
         <AlternativesForm
           onSubmit={(event) => {
             event.preventDefault();
+            setIsClicked(false);
+            {
+              console.log(event.type);
+            }
             setIsQuestionSubmited(true);
             addResult(isCorrect);
             setTimeout(() => {
@@ -155,11 +160,10 @@ function QuestionWidget({
                 }
               }
               onSubmit();
-              {
-                console.log(question);
-              }
+
               setSelectedAlternative(undefined);
               setIsQuestionSubmited(false);
+              setIsClicked(true);
             }, 1 * 3000);
           }}
         >
@@ -184,13 +188,18 @@ function QuestionWidget({
                   id={alternativeId}
                   type="radio"
                   name={questId}
-                  onClick={() => setSelectedAlternative(alternativeIndex)}
+                  onClick={() =>
+                    isClicked && setSelectedAlternative(alternativeIndex)
+                  }
                 />
                 {alternative}
               </Widget.Topic>
             );
           })}
-          <Button type="submit" disabled={!hasAlternativeSelected}>
+          <Button
+            type="submit"
+            disabled={!hasAlternativeSelected || !isClicked}
+          >
             Confirmar
           </Button>
           {isQuestionSubmited && isCorrect && <p>Você acertou!</p>}
