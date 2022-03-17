@@ -2,7 +2,7 @@
 
 
 <p align="center">
-  <img src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1647474765/tcc_gif_ur8x1z.gif" />
+  <img src="https://res.cloudinary.com/dhmkfekt2/image/upload/v1647475272/tcc_gif_ur8x1z_hvipbq.gif" />
 </p>
 
 
